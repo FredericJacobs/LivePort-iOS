@@ -30,6 +30,25 @@
 		B64BB5E015C4966700E81E3B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB5DF15C4966700E81E3B /* QuartzCore.framework */; };
 		B64BB5E215C4966E00E81E3B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB5E115C4966E00E81E3B /* CoreFoundation.framework */; };
 		B64BB5E415C4967300E81E3B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB5E315C4967300E81E3B /* MobileCoreServices.framework */; };
+		B6FBAFDD15C4A1A60019C32E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFD815C4A1A60019C32E /* CoreTelephony.framework */; };
+		B6FBAFDE15C4A1A60019C32E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFD915C4A1A60019C32E /* MobileCoreServices.framework */; };
+		B6FBAFDF15C4A1A60019C32E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFDA15C4A1A60019C32E /* CFNetwork.framework */; };
+		B6FBAFE015C4A1A60019C32E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFDB15C4A1A60019C32E /* SystemConfiguration.framework */; };
+		B6FBAFE115C4A1A60019C32E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFDC15C4A1A60019C32E /* CoreMedia.framework */; };
+		B6FBAFE815C4A1B00019C32E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFE315C4A1B00019C32E /* Security.framework */; };
+		B6FBAFE915C4A1B00019C32E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFE415C4A1B00019C32E /* AudioToolbox.framework */; };
+		B6FBAFEA15C4A1B00019C32E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFE515C4A1B00019C32E /* CoreAudio.framework */; };
+		B6FBAFEB15C4A1B00019C32E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFE615C4A1B00019C32E /* CoreVideo.framework */; };
+		B6FBAFEC15C4A1B00019C32E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFE715C4A1B00019C32E /* OpenGLES.framework */; };
+		B6FBAFF415C4A1B80019C32E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFED15C4A1B80019C32E /* libz.dylib */; };
+		B6FBAFF515C4A1B80019C32E /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFEE15C4A1B80019C32E /* libstdc++.dylib */; };
+		B6FBAFF615C4A1B80019C32E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFEF15C4A1B80019C32E /* QuartzCore.framework */; };
+		B6FBAFF715C4A1B80019C32E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFF015C4A1B80019C32E /* AVFoundation.framework */; };
+		B6FBAFF815C4A1B80019C32E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFF115C4A1B80019C32E /* UIKit.framework */; };
+		B6FBAFF915C4A1B80019C32E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFF215C4A1B80019C32E /* Foundation.framework */; };
+		B6FBAFFA15C4A1B80019C32E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFF315C4A1B80019C32E /* CoreGraphics.framework */; };
+		B6FBAFFC15C4A1CC0019C32E /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B6FBAFFB15C4A1CC0019C32E /* opentok.bundle */; };
+		B6FBAFFE15C4A1D90019C32E /* Opentok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFFD15C4A1D90019C32E /* Opentok.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +90,25 @@
 		B64BB5DF15C4966700E81E3B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B64BB5E115C4966E00E81E3B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		B64BB5E315C4967300E81E3B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B6FBAFD815C4A1A60019C32E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B6FBAFD915C4A1A60019C32E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B6FBAFDA15C4A1A60019C32E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B6FBAFDB15C4A1A60019C32E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B6FBAFDC15C4A1A60019C32E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B6FBAFE315C4A1B00019C32E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B6FBAFE415C4A1B00019C32E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B6FBAFE515C4A1B00019C32E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		B6FBAFE615C4A1B00019C32E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		B6FBAFE715C4A1B00019C32E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B6FBAFED15C4A1B80019C32E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B6FBAFEE15C4A1B80019C32E /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		B6FBAFEF15C4A1B80019C32E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B6FBAFF015C4A1B80019C32E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B6FBAFF115C4A1B80019C32E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B6FBAFF215C4A1B80019C32E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B6FBAFF315C4A1B80019C32E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B6FBAFFB15C4A1CC0019C32E /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = opentok.bundle; path = "../../../Downloads/opentok-opentok-ios-sdk-055292b/Opentok.framework/Versions/A/Resources/opentok.bundle"; sourceTree = "<group>"; };
+		B6FBAFFD15C4A1D90019C32E /* Opentok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Opentok.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +125,24 @@
 				B64BB5DE15C4966100E81E3B /* AssetsLibrary.framework in Frameworks */,
 				B64BB5C815C48ABD00E81E3B /* MapKit.framework in Frameworks */,
 				B64BB5DB15C4953C00E81E3B /* FPPicker.framework in Frameworks */,
+				B6FBAFDD15C4A1A60019C32E /* CoreTelephony.framework in Frameworks */,
+				B6FBAFDE15C4A1A60019C32E /* MobileCoreServices.framework in Frameworks */,
+				B6FBAFDF15C4A1A60019C32E /* CFNetwork.framework in Frameworks */,
+				B6FBAFE015C4A1A60019C32E /* SystemConfiguration.framework in Frameworks */,
+				B6FBAFE115C4A1A60019C32E /* CoreMedia.framework in Frameworks */,
+				B6FBAFE815C4A1B00019C32E /* Security.framework in Frameworks */,
+				B6FBAFE915C4A1B00019C32E /* AudioToolbox.framework in Frameworks */,
+				B6FBAFEA15C4A1B00019C32E /* CoreAudio.framework in Frameworks */,
+				B6FBAFEB15C4A1B00019C32E /* CoreVideo.framework in Frameworks */,
+				B6FBAFEC15C4A1B00019C32E /* OpenGLES.framework in Frameworks */,
+				B6FBAFF415C4A1B80019C32E /* libz.dylib in Frameworks */,
+				B6FBAFF515C4A1B80019C32E /* libstdc++.dylib in Frameworks */,
+				B6FBAFF615C4A1B80019C32E /* QuartzCore.framework in Frameworks */,
+				B6FBAFF715C4A1B80019C32E /* AVFoundation.framework in Frameworks */,
+				B6FBAFF815C4A1B80019C32E /* UIKit.framework in Frameworks */,
+				B6FBAFF915C4A1B80019C32E /* Foundation.framework in Frameworks */,
+				B6FBAFFA15C4A1B80019C32E /* CoreGraphics.framework in Frameworks */,
+				B6FBAFFE15C4A1D90019C32E /* Opentok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +180,25 @@
 		B64BB58615C4840A00E81E3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6FBAFFD15C4A1D90019C32E /* Opentok.framework */,
+				B6FBAFFB15C4A1CC0019C32E /* opentok.bundle */,
+				B6FBAFED15C4A1B80019C32E /* libz.dylib */,
+				B6FBAFEE15C4A1B80019C32E /* libstdc++.dylib */,
+				B6FBAFEF15C4A1B80019C32E /* QuartzCore.framework */,
+				B6FBAFF015C4A1B80019C32E /* AVFoundation.framework */,
+				B6FBAFF115C4A1B80019C32E /* UIKit.framework */,
+				B6FBAFF215C4A1B80019C32E /* Foundation.framework */,
+				B6FBAFF315C4A1B80019C32E /* CoreGraphics.framework */,
+				B6FBAFE315C4A1B00019C32E /* Security.framework */,
+				B6FBAFE415C4A1B00019C32E /* AudioToolbox.framework */,
+				B6FBAFE515C4A1B00019C32E /* CoreAudio.framework */,
+				B6FBAFE615C4A1B00019C32E /* CoreVideo.framework */,
+				B6FBAFE715C4A1B00019C32E /* OpenGLES.framework */,
+				B6FBAFD815C4A1A60019C32E /* CoreTelephony.framework */,
+				B6FBAFD915C4A1A60019C32E /* MobileCoreServices.framework */,
+				B6FBAFDA15C4A1A60019C32E /* CFNetwork.framework */,
+				B6FBAFDB15C4A1A60019C32E /* SystemConfiguration.framework */,
+				B6FBAFDC15C4A1A60019C32E /* CoreMedia.framework */,
 				B64BB5E315C4967300E81E3B /* MobileCoreServices.framework */,
 				B64BB5E115C4966E00E81E3B /* CoreFoundation.framework */,
 				B64BB5DF15C4966700E81E3B /* QuartzCore.framework */,
@@ -247,6 +322,7 @@
 				B64BB5A715C4840A00E81E3B /* second.png in Resources */,
 				B64BB5A915C4840A00E81E3B /* second@2x.png in Resources */,
 				B64BB5DA15C4953C00E81E3B /* FPPicker.bundle in Resources */,
+				B6FBAFFC15C4A1CC0019C32E /* opentok.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +464,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -407,6 +484,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
