@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "ReportingNavigationViewController.h"
 
 @interface SecondViewController ()
 
@@ -17,7 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    ReportingNavigationViewController *reporting = [[ReportingNavigationViewController alloc]init] ;
+    
+    [self presentViewController:reporting animated:YES completion:nil];
 }
 
 - (void)viewDidUnload

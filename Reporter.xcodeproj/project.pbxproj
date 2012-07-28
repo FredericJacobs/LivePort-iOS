@@ -49,6 +49,11 @@
 		B6FBAFFA15C4A1B80019C32E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFF315C4A1B80019C32E /* CoreGraphics.framework */; };
 		B6FBAFFC15C4A1CC0019C32E /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B6FBAFFB15C4A1CC0019C32E /* opentok.bundle */; };
 		B6FBAFFE15C4A1D90019C32E /* Opentok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFFD15C4A1D90019C32E /* Opentok.framework */; };
+		B6FBB01315C4A7830019C32E /* ReportingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FBB01115C4A7830019C32E /* ReportingViewController.m */; };
+		B6FBB01415C4A7830019C32E /* ReportingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FBB01215C4A7830019C32E /* ReportingViewController.xib */; };
+		B6FBB02215C4A7D70019C32E /* ReportingNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FBB02115C4A7D70019C32E /* ReportingNavigationViewController.m */; };
+		B6FBB02615C4A7F40019C32E /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FBB02415C4A7F40019C32E /* ReportViewController.m */; };
+		B6FBB02915C4AA300019C32E /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FBB02815C4AA300019C32E /* ReportViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +114,14 @@
 		B6FBAFF315C4A1B80019C32E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B6FBAFFB15C4A1CC0019C32E /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = opentok.bundle; path = "../../../Downloads/opentok-opentok-ios-sdk-055292b/Opentok.framework/Versions/A/Resources/opentok.bundle"; sourceTree = "<group>"; };
 		B6FBAFFD15C4A1D90019C32E /* Opentok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Opentok.framework; sourceTree = "<group>"; };
+		B6FBB01015C4A7830019C32E /* ReportingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportingViewController.h; sourceTree = "<group>"; };
+		B6FBB01115C4A7830019C32E /* ReportingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportingViewController.m; sourceTree = "<group>"; };
+		B6FBB01215C4A7830019C32E /* ReportingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportingViewController.xib; sourceTree = "<group>"; };
+		B6FBB02015C4A7D70019C32E /* ReportingNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportingNavigationViewController.h; sourceTree = "<group>"; };
+		B6FBB02115C4A7D70019C32E /* ReportingNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportingNavigationViewController.m; sourceTree = "<group>"; };
+		B6FBB02315C4A7F40019C32E /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		B6FBB02415C4A7F40019C32E /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		B6FBB02815C4AA300019C32E /* ReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,12 +235,20 @@
 				B64BB59915C4840A00E81E3B /* MainStoryboard.storyboard */,
 				B64BB59C15C4840A00E81E3B /* FirstViewController.h */,
 				B64BB59D15C4840A00E81E3B /* FirstViewController.m */,
+				B6FBB02015C4A7D70019C32E /* ReportingNavigationViewController.h */,
+				B6FBB02115C4A7D70019C32E /* ReportingNavigationViewController.m */,
+				B6FBB02815C4AA300019C32E /* ReportViewController.xib */,
+				B6FBB02315C4A7F40019C32E /* ReportViewController.h */,
+				B6FBB02415C4A7F40019C32E /* ReportViewController.m */,
 				B64BB59F15C4840A00E81E3B /* first.png */,
 				B64BB5A115C4840A00E81E3B /* first@2x.png */,
 				B64BB5A315C4840A00E81E3B /* SecondViewController.h */,
 				B64BB5A415C4840A00E81E3B /* SecondViewController.m */,
 				B64BB5A615C4840A00E81E3B /* second.png */,
 				B64BB5A815C4840A00E81E3B /* second@2x.png */,
+				B6FBB01015C4A7830019C32E /* ReportingViewController.h */,
+				B6FBB01115C4A7830019C32E /* ReportingViewController.m */,
+				B6FBB01215C4A7830019C32E /* ReportingViewController.xib */,
 				B64BB58E15C4840A00E81E3B /* Supporting Files */,
 			);
 			path = Reporter;
@@ -323,6 +344,8 @@
 				B64BB5A915C4840A00E81E3B /* second@2x.png in Resources */,
 				B64BB5DA15C4953C00E81E3B /* FPPicker.bundle in Resources */,
 				B6FBAFFC15C4A1CC0019C32E /* opentok.bundle in Resources */,
+				B6FBB01415C4A7830019C32E /* ReportingViewController.xib in Resources */,
+				B6FBB02915C4AA300019C32E /* ReportViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +383,9 @@
 				B64BB59815C4840A00E81E3B /* AppDelegate.m in Sources */,
 				B64BB59E15C4840A00E81E3B /* FirstViewController.m in Sources */,
 				B64BB5A515C4840A00E81E3B /* SecondViewController.m in Sources */,
+				B6FBB01315C4A7830019C32E /* ReportingViewController.m in Sources */,
+				B6FBB02215C4A7D70019C32E /* ReportingNavigationViewController.m in Sources */,
+				B6FBB02615C4A7F40019C32E /* ReportViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -444,6 +471,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
