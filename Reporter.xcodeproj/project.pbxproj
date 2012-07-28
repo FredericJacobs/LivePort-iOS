@@ -78,12 +78,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B64BB58815C4840A00E81E3B /* UIKit.framework in Frameworks */,
-				B64BB58A15C4840A00E81E3B /* Foundation.framework in Frameworks */,
 				B64BB58C15C4840A00E81E3B /* CoreGraphics.framework in Frameworks */,
-				B64BB5E415C4967300E81E3B /* MobileCoreServices.framework in Frameworks */,
-				B64BB5E215C4966E00E81E3B /* CoreFoundation.framework in Frameworks */,
+				B64BB58A15C4840A00E81E3B /* Foundation.framework in Frameworks */,
 				B64BB5E015C4966700E81E3B /* QuartzCore.framework in Frameworks */,
+				B64BB5E415C4967300E81E3B /* MobileCoreServices.framework in Frameworks */,
+				B64BB58815C4840A00E81E3B /* UIKit.framework in Frameworks */,
+				B64BB5E215C4966E00E81E3B /* CoreFoundation.framework in Frameworks */,
 				B64BB5DE15C4966100E81E3B /* AssetsLibrary.framework in Frameworks */,
 				B64BB5C815C48ABD00E81E3B /* MapKit.framework in Frameworks */,
 				B64BB5DB15C4953C00E81E3B /* FPPicker.framework in Frameworks */,
