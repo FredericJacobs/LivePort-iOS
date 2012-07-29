@@ -7,8 +7,7 @@
 //
 
 #import "ReportWhatViewController.h"
-#import "ReportViewController.h"
-
+#import "ReporterBackendInteraction.h"
 
 @interface ReportWhatViewController ()
 
@@ -71,6 +70,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [[ReporterBackendInteraction sharedManager]setSelectedString:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

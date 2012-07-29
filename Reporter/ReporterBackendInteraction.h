@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ReporterBackendInteraction : NSObject
+@interface ReporterBackendInteraction : NSObject{
+    NSString *selectedString;
+}
 
+@property (nonatomic,retain) NSString *selectedString;
 
 + (id)sharedManager;
 - (void) sendImageURLToBackend:(NSURL*) urlToImage;

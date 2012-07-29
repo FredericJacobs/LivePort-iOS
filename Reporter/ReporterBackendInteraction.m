@@ -36,7 +36,6 @@
 - (void) sendImageURLToBackend:(NSURL*) urlToImage {
     
     
-    
 }
 
 @end

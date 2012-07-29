@@ -8,6 +8,7 @@
 
 #import "ReportViewController.h"
 #import "ReportWhatViewController.h"
+#import "ReporterBackendInteraction.h"
 
 @interface ReportViewController ()
 
@@ -27,8 +28,6 @@
     }
     return self;
 }
-
-
 
 -(void) loadLocation {
     locationManager = [[CLLocationManager alloc] init];
@@ -55,7 +54,7 @@
     int minutes = decimal * 60;
     double seconds = decimal * 3600 - minutes * 60;
     latitude = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
-                     degrees, minutes, seconds];
+                degrees, minutes, seconds];
     degrees = newLocation.coordinate.longitude;
     decimal = fabs(newLocation.coordinate.longitude - degrees);
     minutes = decimal * 60;
@@ -64,7 +63,7 @@
     decLoc = [[NSString stringWithString:decLoc] stringByAppendingString:[NSString stringWithFormat:@",%f",newLocation.coordinate.longitude ]];
     
     longitude = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
-                       degrees, minutes, seconds];
+                 degrees, minutes, seconds];
     
     [maintable reloadData];
     
@@ -81,7 +80,7 @@
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     
     return [sectionsArray count];
-
+    
 }
 
 -(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -100,7 +99,7 @@
             return 3;
         }
     }
-
+    
     
     return 1;
 }
@@ -115,12 +114,17 @@
     }
     if (indexPath.section == 0 ) {
         if (indexPath.row == 0 ) {
-        // Initialize cell
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        cell.textLabel.text = @"Category";
-        cell.detailTextLabel.text = nil;
-        // TODO: Any other initialization that applies to all cells of this type.
-        //       (Possibly create and add subviews, assign tags, etc.)
+            // Initialize cell
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            cell.textLabel.text = @"Category";
+            if (nil == [[ReporterBackendInteraction sharedManager] selectedString]) {
+                cell.detailTextLabel.text = @"Pick One";
+            }
+            else{
+                cell.detailTextLabel.text = [[ReporterBackendInteraction sharedManager] selectedString];
+            }
+            // TODO: Any other initialization that applies to all cells of this type.
+            //       (Possibly create and add subviews, assign tags, etc.)
         }
         if (indexPath.row == 1) {
             
@@ -136,7 +140,7 @@
             textFieldRounded.returnKeyType = UIReturnKeyDone;
             textFieldRounded.delegate = self;
             [cell addSubview:textFieldRounded];
-    
+            
         }
         
     }
@@ -164,9 +168,9 @@
             if (indexPath.row == 2) {
                 cell.textLabel.textAlignment = UITextAlignmentCenter;
                 cell.textLabel.text = @"Map It";
-
+                
             }
-
+            
         }
         
     }
@@ -191,13 +195,12 @@
     [self.view endEditing:YES];
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         [[self navigationController] pushViewController:[[ReportWhatViewController alloc]initWithStyle:UITableViewStyleGrouped] animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
-   
+    
     if (indexPath.section == 1) {
         if (indexPath.row == 2) {
             UIApplication *app = [UIApplication sharedApplication];
@@ -210,7 +213,7 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated{
-    
+    [maintable reloadData];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
