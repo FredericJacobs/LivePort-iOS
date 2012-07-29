@@ -11,7 +11,9 @@
 @interface ReportingNavigationViewController : UIViewController{
     
     UINavigationController *navigationController;
-
+    UIBarButtonItem *reportButton;
 }
+
+@property (nonatomic,retain) UIBarButtonItem *reportButton;
 
 @end

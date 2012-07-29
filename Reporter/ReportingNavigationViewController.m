@@ -30,9 +30,15 @@
     UIBarButtonItem *dismissButton=[[UIBarButtonItem alloc]
                                initWithTitle:@"Dismiss" style:UIBarButtonItemStyleBordered
                                target:self action:@selector(dismissMVC)];
+    
+    reportButton=[[UIBarButtonItem alloc]
+                                    initWithTitle:@"Report" style:UIBarButtonItemStyleDone
+                                    target:self action:@selector(report)];
 
+    reportButton.enabled = false;
     
     reportingVC.navigationItem.leftBarButtonItem = dismissButton ;
+    reportingVC.navigationItem.rightBarButtonItem = reportButton ;
     
     [self.view addSubview:navigationController.view];
 

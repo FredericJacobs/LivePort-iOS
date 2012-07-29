@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <MapKit/MapKit.h>
 
 @interface ReportViewController : UIViewController <UITableViewDataSource, UITableViewDataSource, CLLocationManagerDelegate, UITextFieldDelegate>{
     CLLocationManager *locationManager;
@@ -17,6 +19,10 @@
     NSString *decLoc;
     BOOL accurateLocation;
     UITextField *textFieldRounded;
+    NSString *pictureURL;
+    NSMutableArray *sectionsArray;
+    UIImageView *imageView;
+    
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *maintable;

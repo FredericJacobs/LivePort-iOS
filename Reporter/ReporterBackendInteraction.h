@@ -7,15 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "asi-http-request/Classes/ASIFormDataRequest.h"
+#import "ReportingNavigationViewController.h"
 
-@interface ReporterBackendInteraction : NSObject{
+@interface ReporterBackendInteraction : NSObject <ASIHTTPRequestDelegate>{
     NSString *selectedString;
+    NSString *token;
+    NSString *username;
+    NSString *pictureURL;
 }
 
 @property (nonatomic,retain) NSString *selectedString;
+@property (nonatomic,retain) NSString *pictureURL;
 
 + (id)sharedManager;
-- (void) sendImageURLToBackend:(NSURL*) urlToImage;
+- (void) authWithUsername:(NSString*)usernames andPassword:(NSString*)password;
+- (BOOL) userIsLoggedIn;
+- (void) createAReportWithType:(NSString*)type description:(NSString*)description latitude:(NSString*)latitude longitude:(NSString*) longitude imageURL:(NSString*)image_url live_stream:(NSString*)liveStream;
 
 
 @end

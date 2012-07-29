@@ -10,11 +10,11 @@
 #import "ReportWhatViewController.h"
 #import "ReporterBackendInteraction.h"
 
+
 @interface ReportViewController ()
 
 @end
 
-#define sectionsArray [NSArray arrayWithObjects: @"What ?",@"Where ?",@"When ?",nil]
 
 @implementation ReportViewController
 
@@ -24,7 +24,13 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        sectionsArray = [NSMutableArray arrayWithObjects: @"What ?",@"Where ?",@"When ?",nil];
         accurateLocation = FALSE;
+        pictureURL = [[ReporterBackendInteraction sharedManager]pictureURL];
+        if (pictureURL != nil) {
+            [sectionsArray addObject:@"Image"];
+            [[ReporterBackendInteraction sharedManager]setPictureURL:nil];
+        }
     }
     return self;
 }
@@ -73,9 +79,9 @@
 {
     [super viewDidLoad];
     [self loadLocation];
-    
-    
+
 }
+
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     
@@ -172,22 +178,47 @@
             }
             
         }
-        
-    }
     
-    else if (indexPath.section == 2){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportTimeViewCell"];
-        cell.textLabel.text = [[[NSDate alloc] init] descriptionWithLocale:[NSLocale currentLocale]];
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
-    }
     
-    return cell;
+    }
+
+else if (indexPath.section == 2){
+    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportTimeViewCell"];
+    cell.textLabel.text = [[[NSDate alloc] init] descriptionWithLocale:[NSLocale currentLocale]];
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
+}
+
+else if (indexPath.section == 3){
+    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportImageViewCell"];
+    UIImageView *pict = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, 300, 245)];
+    [pict setImageWithURL:[NSURL URLWithString:pictureURL]];
+    
+    [cell addSubview:pict];
+    [cell clipsToBounds];
+    
+}
+
+return cell;
+}
+
+- (BOOL) readyToReport {
+    
+    if ( [[ReporterBackendInteraction sharedManager] selectedString] != nil && textFieldRounded.text != nil){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)theTextField
 {
-    NSLog(@"textFieldShouldReturn Fired :)");
     [textFieldRounded resignFirstResponder];
+    
+    if ([self readyToReport]) {
+        self.navigationItem.rightBarButtonItem.enabled = TRUE;
+    }
+    
     return YES;
 }
 
@@ -214,6 +245,9 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [maintable reloadData];
+    if ([self readyToReport]) {
+        self.navigationItem.rightBarButtonItem.enabled = TRUE;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -221,6 +255,10 @@
     if (indexPath.section == 0) {
         if(indexPath.row == 1)
             return 100;
+    }
+    
+    if (indexPath.section == 3) {
+        return 225;
     }
     
     return 44;

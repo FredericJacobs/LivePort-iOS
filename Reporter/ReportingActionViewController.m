@@ -35,7 +35,7 @@
 
 
 -(IBAction)showActionSheet:(id)sender {
-	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Report", @"Take a shot", @"LivePort", nil];
+	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Report", @"Take a shot", @"Live Stream", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	[popupQuery showInView:self.view];
 }
@@ -79,13 +79,18 @@
 }
 
 - (void) FPPickerController:(FPPickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    [[ReporterBackendInteraction sharedManager] sendImageURLToBackend:[info objectForKey:@"FPPickerControllerRemoteURL"]];
-    [self dismissModalViewControllerAnimated:YES];
+    [[ReporterBackendInteraction sharedManager] setPictureURL:[info objectForKey:@"FPPickerControllerRemoteURL"]];
+    
+    [self dismissViewControllerAnimated:YES completion:^(void){
+        ReportingNavigationViewController *reporting = [[ReportingNavigationViewController alloc]init] ;
+        
+        [self presentViewController:reporting animated:YES completion:nil];
+    }];;
 }
 
 - (void) FPPickerControllerDidCancel:(FPPickerController *)picker {
     [self dismissModalViewControllerAnimated:YES];
-    [self goBackToTheMapView ];
+    [self goBackToTheMapView];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -26,6 +26,25 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
                 <viewController title="Second" id="3" customClass="ReportingActionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z4m-JL-lQL">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="linen.png" id="5n5-mc-bxA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="banner.png" id="xMH-aX-kgB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="plus-button.png" id="Xhq-Ag-4A9">
+                                <rect key="frame" x="258" y="4" width="42" height="35"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
                     <tabBarItem key="tabBarItem" title="Report" image="Toolbarreport.png" id="6"/>
                 </viewController>
             </objects>
@@ -69,6 +88,9 @@
     </scenes>
     <resources>
         <image name="Toolbarreport.png" width="20" height="20"/>
+        <image name="banner.png" width="320" height="40"/>
+        <image name="linen.png" width="320" height="480"/>
+        <image name="plus-button.png" width="42" height="40"/>
         <image name="tabmap.png" width="20" height="20"/>
     </resources>
     <classes>
