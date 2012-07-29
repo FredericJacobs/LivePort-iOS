@@ -139,7 +139,7 @@ latitude longitude:(NSString*) longitude image:(NSString*)images_url live_stream
         
     }
     
-    categories = @[@"Road Block", @"Checkpoint", @"Police Sighting", @"Other" ];
+    categories = @[@"Road Block", @"Checkpoint", @"Police Sighting", @"Fire", @"Earthquake", @"Other" ];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"token"] != nil) {
