@@ -7,11 +7,13 @@
 //
 
 #import "ReportViewController.h"
+#import "ReportWhatViewController.h"
 
 @interface ReportViewController ()
 
 @end
 
+#define sectionsArray [NSArray arrayWithObjects: @"What ?",@"Where ?",@"When ?",nil]
 
 @implementation ReportViewController
 
@@ -35,12 +37,17 @@
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 2;
+    return [sectionsArray count];
 
 }
 
+-(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    return [sectionsArray objectAtIndex:section];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -48,23 +55,25 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReportTableViewCell"];
     if (cell == nil) {
         // No cell to reuse => create a new one
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportTableViewCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ReportTableViewCell"];
         
         // Initialize cell
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         cell.textLabel.textColor = [UIColor blueColor];
+        cell.textLabel.text = @"Select";
         // TODO: Any other initialization that applies to all cells of this type.
         //       (Possibly create and add subviews, assign tags, etc.)
     }
     
-    cell.textLabel.text = @"Placeholder";
+    
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    
+    [[self navigationController] pushViewController:[[ReportWhatViewController alloc]initWithStyle:UITableViewStyleGrouped] animated:YES];
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 

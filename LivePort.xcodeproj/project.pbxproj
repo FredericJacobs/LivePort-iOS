@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6172DE515C4D2FE00C907C2 /* ReportWhatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6172DE415C4D2FE00C907C2 /* ReportWhatViewController.m */; };
 		B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */; };
 		B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218E15C4BBA9008FC119 /* LivePortViewController.m */; };
 		B623219115C4C22C008FC119 /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B623219015C4C22C008FC119 /* opentok.bundle */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6172DE315C4D2FE00C907C2 /* ReportWhatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportWhatViewController.h; sourceTree = "<group>"; };
+		B6172DE415C4D2FE00C907C2 /* ReportWhatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportWhatViewController.m; sourceTree = "<group>"; };
 		B623218515C4B8B1008FC119 /* ReporterBackendInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReporterBackendInteraction.h; sourceTree = "<group>"; };
 		B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReporterBackendInteraction.m; sourceTree = "<group>"; };
 		B623218D15C4BBA9008FC119 /* LivePortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortViewController.h; sourceTree = "<group>"; };
@@ -83,14 +86,14 @@
 		B623219715C4C93D008FC119 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B623219E15C4C965008FC119 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		B62321A015C4C974008FC119 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
-		B64BB58315C4840A00E81E3B /* Reporter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reporter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B64BB58315C4840A00E81E3B /* LivePort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64BB58715C4840A00E81E3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B64BB58915C4840A00E81E3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B64BB58B15C4840A00E81E3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B64BB58F15C4840A00E81E3B /* Reporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reporter-Info.plist"; sourceTree = "<group>"; };
+		B64BB58F15C4840A00E81E3B /* LivePort-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LivePort-Info.plist"; sourceTree = "<group>"; };
 		B64BB59115C4840A00E81E3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B64BB59315C4840A00E81E3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B64BB59515C4840A00E81E3B /* Reporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reporter-Prefix.pch"; sourceTree = "<group>"; };
+		B64BB59515C4840A00E81E3B /* LivePort-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LivePort-Prefix.pch"; sourceTree = "<group>"; };
 		B64BB59615C4840A00E81E3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B64BB59715C4840A00E81E3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B64BB59A15C4840A00E81E3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -102,7 +105,7 @@
 		B64BB5A415C4840A00E81E3B /* ReportingActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportingActionViewController.m; sourceTree = "<group>"; };
 		B64BB5A615C4840A00E81E3B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		B64BB5A815C4840A00E81E3B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		B64BB5AF15C4840A00E81E3B /* ReporterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReporterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B64BB5AF15C4840A00E81E3B /* LivePortTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LivePortTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64BB5B015C4840A00E81E3B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B64BB5C715C48ABD00E81E3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B64BB5D815C4953C00E81E3B /* FPPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FPPicker.bundle; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				B6FBB02815C4AA300019C32E /* ReportViewController.xib */,
 				B6FBB02315C4A7F40019C32E /* ReportViewController.h */,
 				B6FBB02415C4A7F40019C32E /* ReportViewController.m */,
+				B6172DE315C4D2FE00C907C2 /* ReportWhatViewController.h */,
+				B6172DE415C4D2FE00C907C2 /* ReportWhatViewController.m */,
 			);
 			name = Reporting;
 			sourceTree = "<group>";
@@ -242,7 +247,7 @@
 		B64BB57815C4840A00E81E3B = {
 			isa = PBXGroup;
 			children = (
-				B64BB58D15C4840A00E81E3B /* Reporter */,
+				B64BB58D15C4840A00E81E3B /* LivePort */,
 				B64BB58615C4840A00E81E3B /* Frameworks */,
 				B64BB58415C4840A00E81E3B /* Products */,
 			);
@@ -251,8 +256,8 @@
 		B64BB58415C4840A00E81E3B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B64BB58315C4840A00E81E3B /* Reporter.app */,
-				B64BB5AF15C4840A00E81E3B /* ReporterTests.octest */,
+				B64BB58315C4840A00E81E3B /* LivePort.app */,
+				B64BB5AF15C4840A00E81E3B /* LivePortTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,7 +299,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B64BB58D15C4840A00E81E3B /* Reporter */ = {
+		B64BB58D15C4840A00E81E3B /* LivePort */ = {
 			isa = PBXGroup;
 			children = (
 				B62321B515C4CB34008FC119 /* MapView */,
@@ -310,16 +315,17 @@
 				B623219515C4C926008FC119 /* Ressources */,
 				B64BB58E15C4840A00E81E3B /* Supporting Files */,
 			);
+			name = LivePort;
 			path = Reporter;
 			sourceTree = "<group>";
 		};
 		B64BB58E15C4840A00E81E3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B64BB58F15C4840A00E81E3B /* Reporter-Info.plist */,
+				B64BB58F15C4840A00E81E3B /* LivePort-Info.plist */,
 				B64BB59015C4840A00E81E3B /* InfoPlist.strings */,
 				B64BB59315C4840A00E81E3B /* main.m */,
-				B64BB59515C4840A00E81E3B /* Reporter-Prefix.pch */,
+				B64BB59515C4840A00E81E3B /* LivePort-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -327,9 +333,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B64BB58215C4840A00E81E3B /* Reporter */ = {
+		B64BB58215C4840A00E81E3B /* LivePort */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B64BB5C115C4840A00E81E3B /* Build configuration list for PBXNativeTarget "Reporter" */;
+			buildConfigurationList = B64BB5C115C4840A00E81E3B /* Build configuration list for PBXNativeTarget "LivePort" */;
 			buildPhases = (
 				B64BB57F15C4840A00E81E3B /* Sources */,
 				B64BB58015C4840A00E81E3B /* Frameworks */,
@@ -339,14 +345,14 @@
 			);
 			dependencies = (
 			);
-			name = Reporter;
+			name = LivePort;
 			productName = Reporter;
-			productReference = B64BB58315C4840A00E81E3B /* Reporter.app */;
+			productReference = B64BB58315C4840A00E81E3B /* LivePort.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B64BB5AE15C4840A00E81E3B /* ReporterTests */ = {
+		B64BB5AE15C4840A00E81E3B /* LivePortTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B64BB5C415C4840A00E81E3B /* Build configuration list for PBXNativeTarget "ReporterTests" */;
+			buildConfigurationList = B64BB5C415C4840A00E81E3B /* Build configuration list for PBXNativeTarget "LivePortTests" */;
 			buildPhases = (
 				B64BB5AA15C4840A00E81E3B /* Sources */,
 				B64BB5AB15C4840A00E81E3B /* Frameworks */,
@@ -358,9 +364,9 @@
 			dependencies = (
 				B64BB5B515C4840A00E81E3B /* PBXTargetDependency */,
 			);
-			name = ReporterTests;
+			name = LivePortTests;
 			productName = ReporterTests;
-			productReference = B64BB5AF15C4840A00E81E3B /* ReporterTests.octest */;
+			productReference = B64BB5AF15C4840A00E81E3B /* LivePortTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -372,7 +378,7 @@
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = Telecomix;
 			};
-			buildConfigurationList = B64BB57D15C4840A00E81E3B /* Build configuration list for PBXProject "Reporter" */;
+			buildConfigurationList = B64BB57D15C4840A00E81E3B /* Build configuration list for PBXProject "LivePort" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -384,8 +390,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B64BB58215C4840A00E81E3B /* Reporter */,
-				B64BB5AE15C4840A00E81E3B /* ReporterTests */,
+				B64BB58215C4840A00E81E3B /* LivePort */,
+				B64BB5AE15C4840A00E81E3B /* LivePortTests */,
 			);
 		};
 /* End PBXProject section */
@@ -450,6 +456,7 @@
 				B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */,
 				B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */,
 				B623219415C4C8EF008FC119 /* LivePortInfosView.m in Sources */,
+				B6172DE515C4D2FE00C907C2 /* ReportWhatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +472,7 @@
 /* Begin PBXTargetDependency section */
 		B64BB5B515C4840A00E81E3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B64BB58215C4840A00E81E3B /* Reporter */;
+			target = B64BB58215C4840A00E81E3B /* LivePort */;
 			targetProxy = B64BB5B415C4840A00E81E3B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -549,13 +556,13 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Reporter/Reporter-Prefix.pch";
-				INFOPLIST_FILE = "Reporter/Reporter-Info.plist";
+				GCC_PREFIX_HEADER = "Reporter/LivePort-Prefix.pch";
+				INFOPLIST_FILE = "Reporter/LivePort-Info.plist";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LivePort;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -569,13 +576,13 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Reporter/Reporter-Prefix.pch";
-				INFOPLIST_FILE = "Reporter/Reporter-Info.plist";
+				GCC_PREFIX_HEADER = "Reporter/LivePort-Prefix.pch";
+				INFOPLIST_FILE = "Reporter/LivePort-Info.plist";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LivePort;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -592,7 +599,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Reporter/Reporter-Prefix.pch";
 				INFOPLIST_FILE = "ReporterTests/ReporterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LivePortTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -609,7 +616,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Reporter/Reporter-Prefix.pch";
 				INFOPLIST_FILE = "ReporterTests/ReporterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LivePortTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -618,7 +625,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B64BB57D15C4840A00E81E3B /* Build configuration list for PBXProject "Reporter" */ = {
+		B64BB57D15C4840A00E81E3B /* Build configuration list for PBXProject "LivePort" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B64BB5BF15C4840A00E81E3B /* Debug */,
@@ -627,7 +634,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B64BB5C115C4840A00E81E3B /* Build configuration list for PBXNativeTarget "Reporter" */ = {
+		B64BB5C115C4840A00E81E3B /* Build configuration list for PBXNativeTarget "LivePort" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B64BB5C215C4840A00E81E3B /* Debug */,
@@ -636,7 +643,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B64BB5C415C4840A00E81E3B /* Build configuration list for PBXNativeTarget "ReporterTests" */ = {
+		B64BB5C415C4840A00E81E3B /* Build configuration list for PBXNativeTarget "LivePortTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B64BB5C515C4840A00E81E3B /* Debug */,

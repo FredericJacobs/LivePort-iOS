@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StorifyStoriesTableViewController : UITableViewController{
+@interface ReportWhatViewController : UITableViewController{
     NSArray *userStories;
 }
 

@@ -6,17 +6,15 @@
 //  Copyright (c) 2012 Evolucix. All rights reserved.
 //
 
-#import "StorifyStoriesTableViewController.h"
-#import "StorifyAppDelegate.h"
-#import "StorifyReshareViewController.h"
-#import "StorifyConnect.h"
+#import "ReportWhatViewController.h"
+#import "ReportViewController.h"
 
 
-@interface StorifyStoriesTableViewController ()
+@interface ReportWhatViewController ()
 
 @end
 
-@implementation StorifyStoriesTableViewController
+@implementation ReportWhatViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -24,7 +22,7 @@
     
     if (self) {
     
-        userStories = [[StorifyConnect sharedManager] userStories];
+        
     
     }
     return self;
@@ -49,7 +47,7 @@
 }
 
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"My Stories";
+    return @"Categories";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -58,21 +56,11 @@
     return [userStories count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"StoryCells";
-    [self.tableView registerClass:(Class) [UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    cell.textLabel.text = [[userStories objectAtIndex:indexPath.row] objectForKey:@"title"];
-    
-    return cell;
-}
+
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[StorifyConnect sharedManager]setSelectedRow:indexPath.row];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
