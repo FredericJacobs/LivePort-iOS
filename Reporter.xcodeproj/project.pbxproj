@@ -10,6 +10,11 @@
 		B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */; };
 		B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218E15C4BBA9008FC119 /* LivePortViewController.m */; };
 		B623219115C4C22C008FC119 /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B623219015C4C22C008FC119 /* opentok.bundle */; };
+		B623219415C4C8EF008FC119 /* LivePortInfosView.m in Sources */ = {isa = PBXBuildFile; fileRef = B623219315C4C8EF008FC119 /* LivePortInfosView.m */; };
+		B623219815C4C93D008FC119 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B623219615C4C93D008FC119 /* Default.png */; };
+		B623219915C4C93D008FC119 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B623219715C4C93D008FC119 /* Default@2x.png */; };
+		B623219F15C4C965008FC119 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B623219E15C4C965008FC119 /* icon.png */; };
+		B62321A115C4C974008FC119 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B62321A015C4C974008FC119 /* icon@2x.png */; };
 		B64BB58815C4840A00E81E3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58715C4840A00E81E3B /* UIKit.framework */; };
 		B64BB58A15C4840A00E81E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58915C4840A00E81E3B /* Foundation.framework */; };
 		B64BB58C15C4840A00E81E3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58B15C4840A00E81E3B /* CoreGraphics.framework */; };
@@ -72,6 +77,12 @@
 		B623218D15C4BBA9008FC119 /* LivePortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortViewController.h; sourceTree = "<group>"; };
 		B623218E15C4BBA9008FC119 /* LivePortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePortViewController.m; sourceTree = "<group>"; };
 		B623219015C4C22C008FC119 /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = opentok.bundle; sourceTree = "<group>"; };
+		B623219215C4C8EF008FC119 /* LivePortInfosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortInfosView.h; sourceTree = "<group>"; };
+		B623219315C4C8EF008FC119 /* LivePortInfosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePortInfosView.m; sourceTree = "<group>"; };
+		B623219615C4C93D008FC119 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B623219715C4C93D008FC119 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B623219E15C4C965008FC119 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		B62321A015C4C974008FC119 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		B64BB58315C4840A00E81E3B /* Reporter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reporter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64BB58715C4840A00E81E3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B64BB58915C4840A00E81E3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -173,6 +184,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B623219515C4C926008FC119 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				B623219615C4C93D008FC119 /* Default.png */,
+				B623219715C4C93D008FC119 /* Default@2x.png */,
+				B62321A015C4C974008FC119 /* icon@2x.png */,
+				B623219E15C4C965008FC119 /* icon.png */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
 		B64BB57815C4840A00E81E3B = {
 			isa = PBXGroup;
 			children = (
@@ -231,8 +253,11 @@
 		B64BB58D15C4840A00E81E3B /* Reporter */ = {
 			isa = PBXGroup;
 			children = (
+				B623219515C4C926008FC119 /* Ressources */,
 				B623218D15C4BBA9008FC119 /* LivePortViewController.h */,
 				B623218E15C4BBA9008FC119 /* LivePortViewController.m */,
+				B623219215C4C8EF008FC119 /* LivePortInfosView.h */,
+				B623219315C4C8EF008FC119 /* LivePortInfosView.m */,
 				B623218515C4B8B1008FC119 /* ReporterBackendInteraction.h */,
 				B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */,
 				B64BB59615C4840A00E81E3B /* AppDelegate.h */,
@@ -347,6 +372,10 @@
 				B64BB5DA15C4953C00E81E3B /* FPPicker.bundle in Resources */,
 				B6FBB02915C4AA300019C32E /* ReportViewController.xib in Resources */,
 				B623219115C4C22C008FC119 /* opentok.bundle in Resources */,
+				B623219815C4C93D008FC119 /* Default.png in Resources */,
+				B623219915C4C93D008FC119 /* Default@2x.png in Resources */,
+				B623219F15C4C965008FC119 /* icon.png in Resources */,
+				B62321A115C4C974008FC119 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +417,7 @@
 				B6FBB02615C4A7F40019C32E /* ReportViewController.m in Sources */,
 				B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */,
 				B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */,
+				B623219415C4C8EF008FC119 /* LivePortInfosView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

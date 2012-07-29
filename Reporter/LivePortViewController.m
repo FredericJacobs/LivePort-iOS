@@ -11,7 +11,6 @@
 @implementation LivePortViewController {
     OTSession* _session;
     OTPublisher* _publisher;
-    OTSubscriber* _subscriber;
 }
 
 static double widgetHeight = 240;
@@ -40,18 +39,11 @@ static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to s
     [super viewDidLoad];
     _session = [[OTSession alloc] initWithSessionId:kSessionId
                                            delegate:self];
+    
     [self doConnect];
 }
 
-- (void)updateSubscriber {
-    for (NSString* streamId in _session.streams) {
-        OTStream* stream = [_session.streams valueForKey:streamId];
-        if (![stream.connection.connectionId isEqualToString: _session.connection.connectionId]) {
-            _subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
-            break;
-        }
-    }
-}
+
 
 #pragma mark - OpenTok methods
 
@@ -92,22 +84,11 @@ static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to s
         ||
         (!subscribeToSelf && ![stream.connection.connectionId isEqualToString: _session.connection.connectionId])
         ) {
-        if (!_subscriber) {
-            _subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
-        }
     }
 }
 
 - (void)session:(OTSession*)session didDropStream:(OTStream*)stream{
     NSLog(@"session didDropStream (%@)", stream.streamId);
-    NSLog(@"_subscriber.stream.streamId (%@)", _subscriber.stream.streamId);
-    if (!subscribeToSelf
-        && _subscriber
-        && [_subscriber.stream.streamId isEqualToString: stream.streamId])
-    {
-        _subscriber = nil;
-        [self updateSubscriber];
-    }
 }
 
 - (void)subscriberDidConnectToStream:(OTSubscriber*)subscriber

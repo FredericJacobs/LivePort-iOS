@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Opentok/Opentok.h>
 
-@interface LivePortViewController : UIViewController <OTSessionDelegate, OTSubscriberDelegate, OTPublisherDelegate>{
-    
-    
+@interface LivePortViewController : UIViewController <OTSessionDelegate, OTPublisherDelegate>{
+    UIView *details;
 }
 
 - (void)doConnect;
