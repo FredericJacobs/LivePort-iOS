@@ -25,7 +25,7 @@
 - (void)fadeOut
 {
     
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAllowUserInteraction  animations:^
+    [UIView animateWithDuration:1.8 delay:0 options:UIViewAnimationOptionAllowUserInteraction  animations:^
      {
          defaultView.alpha = 0.0f;
          

@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map View" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Map View" image="tabmap.png" id="7"/>
                     <navigationItem key="navigationItem" id="mEt-4E-2uA"/>
                 </viewController>
             </objects>
@@ -26,7 +26,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
                 <viewController title="Second" id="3" customClass="ReportingActionViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Report" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Report" image="Toolbarreport.png" id="6"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="498"/>
@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller-->
         <scene sceneID="eMG-Bq-oYL">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKn-St-5FJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,15 +61,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="3JU-b1-tUM"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="3JU-b1-tUM"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="1077"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
-        <image name="second" width="16" height="16"/>
+        <image name="Toolbarreport.png" width="20" height="20"/>
+        <image name="tabmap.png" width="20" height="20"/>
     </resources>
     <classes>
         <class className="LivePortTabBarViewController" superclassName="UITabBarController">

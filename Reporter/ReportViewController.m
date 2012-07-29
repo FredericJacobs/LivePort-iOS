@@ -13,7 +13,7 @@
 
 @end
 
-#define sectionsArray [NSArray arrayWithObjects: @"What ?",@"Where ?",@"When ?",nil]
+#define sectionsArray [NSArray arrayWithObjects: @"What ?",@"Where ?",@"When ?",@"Tell Us More",nil]
 
 @implementation ReportViewController
 
@@ -91,6 +91,9 @@
         }
     }
     
+    if (section == 3) {
+        return 1;
+    }
     
     return 1;
 }
@@ -148,8 +151,28 @@
         cell.textLabel.textAlignment = UITextAlignmentCenter;
     }
     
+    else if (indexPath.section == 3) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportDescription"];
+        
+        UITextField *textFieldRounded = [[UITextField alloc]initWithFrame:CGRectMake(10, 0, 300, 100)];
+        textFieldRounded.borderStyle = UITextBorderStyleRoundedRect;
+        textFieldRounded.textColor = [UIColor blackColor];
+        textFieldRounded.font = [UIFont systemFontOfSize:17.0];
+        textFieldRounded.placeholder = @"Enter Your name";  //place holder
+        textFieldRounded.backgroundColor = [UIColor whiteColor];
+        textFieldRounded.autocorrectionType = UITextAutocorrectionTypeNo;
+        textFieldRounded.keyboardType = UIKeyboardTypeDefault;
+        textFieldRounded.returnKeyType = UIReturnKeyDone;
+        textFieldRounded.delegate = self;
+        
+        [cell addSubview:textFieldRounded];
+    }
+    
+    
     return cell;
 }
+
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
@@ -170,6 +193,15 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 3) {
+        return 100;
+    }
+    
+    return 44;
 }
 
 
