@@ -51,7 +51,6 @@
 	} else if (buttonIndex == 1) {
         FPPickerController *fpController = [[FPPickerController alloc] init];
         
-        // Select and order the sources (Optional) Default is all sources
         fpController.sourceNames = [[NSArray alloc] initWithObjects: FPSourceCamera, FPSourceCameraRoll, nil];
         
         fpController.fpdelegate = self;
@@ -70,6 +69,16 @@
     
 }
 
+-(void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    
+    [self goBackToTheMapView ];
+}
+
+- (void) goBackToTheMapView{
+    self.tabBarController.selectedViewController
+    = [self.tabBarController.viewControllers objectAtIndex:0];
+}
+
 - (void) FPPickerController:(FPPickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [[ReporterBackendInteraction sharedManager] sendImageURLToBackend:[info objectForKey:@"FPPickerControllerRemoteURL"]];
     [self dismissModalViewControllerAnimated:YES];
@@ -77,6 +86,7 @@
 
 - (void) FPPickerControllerDidCancel:(FPPickerController *)picker {
     [self dismissModalViewControllerAnimated:YES];
+    [self goBackToTheMapView ];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

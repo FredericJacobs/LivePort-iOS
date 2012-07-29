@@ -219,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				B62321B215C4CACF008FC119 /* LivePort */,
+				B64BB5A315C4840A00E81E3B /* ReportingActionViewController.h */,
+				B64BB5A415C4840A00E81E3B /* ReportingActionViewController.m */,
 				B6FBB02015C4A7D70019C32E /* ReportingNavigationViewController.h */,
 				B6FBB02115C4A7D70019C32E /* ReportingNavigationViewController.m */,
 				B6FBB02815C4AA300019C32E /* ReportViewController.xib */,
@@ -303,8 +305,6 @@
 				B64BB59915C4840A00E81E3B /* MainStoryboard.storyboard */,
 				B64BB59F15C4840A00E81E3B /* first.png */,
 				B64BB5A115C4840A00E81E3B /* first@2x.png */,
-				B64BB5A315C4840A00E81E3B /* ReportingActionViewController.h */,
-				B64BB5A415C4840A00E81E3B /* ReportingActionViewController.m */,
 				B64BB5A615C4840A00E81E3B /* second.png */,
 				B64BB5A815C4840A00E81E3B /* second@2x.png */,
 				B623219515C4C926008FC119 /* Ressources */,
