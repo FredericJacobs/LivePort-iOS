@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    
+    BOOL animatedLaunch;
+    UIImageView *defaultView;
+    
+}
+- (BOOL) animatedLaunch;
+- (void) reverseAnimatedLaunch;
 
 @property (strong, nonatomic) UIWindow *window;
 

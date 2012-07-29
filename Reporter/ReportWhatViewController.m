@@ -58,10 +58,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // See if there's an existing cell we can reuse
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Foobar"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoriesCell"];
     if (cell == nil) {
         // No cell to reuse => create a new one
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CategoriesCell"];
     }
     
     cell.textLabel.text = [categories objectAtIndex:indexPath.row];

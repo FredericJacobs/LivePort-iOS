@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FPPicker/FPPicker.h>
 
-@interface MapViewController  : UIViewController <FPPickerDelegate>{
-    IBOutlet UIButton *button;
+@interface MapViewController  : UIViewController{
+
 }
-
-- (IBAction)tap:(id)sender;
 
 @end

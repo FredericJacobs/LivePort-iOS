@@ -18,7 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+}
 
+- (void)viewDidAppear:(BOOL)animated{    
 }
 
 - (void)viewDidUnload
@@ -32,11 +35,5 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-- (IBAction)tap:(id)sender{
-
-    FPPickerController *fpController = [[FPPickerController alloc] init];
-    fpController.fpdelegate = self;
-    [self presentModalViewController:fpController animated:YES];    
-}
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B6172DE515C4D2FE00C907C2 /* ReportWhatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6172DE415C4D2FE00C907C2 /* ReportWhatViewController.m */; };
 		B6172DE715C4E44F00C907C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6172DE615C4E44F00C907C2 /* CoreLocation.framework */; };
+		B6172DF115C5012E00C907C2 /* LivePortTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6172DF015C5012E00C907C2 /* LivePortTabBarViewController.m */; };
 		B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */; };
 		B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218E15C4BBA9008FC119 /* LivePortViewController.m */; };
 		B623219115C4C22C008FC119 /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B623219015C4C22C008FC119 /* opentok.bundle */; };
@@ -77,6 +78,8 @@
 		B6172DE315C4D2FE00C907C2 /* ReportWhatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportWhatViewController.h; sourceTree = "<group>"; };
 		B6172DE415C4D2FE00C907C2 /* ReportWhatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportWhatViewController.m; sourceTree = "<group>"; };
 		B6172DE615C4E44F00C907C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B6172DEF15C5012E00C907C2 /* LivePortTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortTabBarViewController.h; sourceTree = "<group>"; };
+		B6172DF015C5012E00C907C2 /* LivePortTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePortTabBarViewController.m; sourceTree = "<group>"; };
 		B623218515C4B8B1008FC119 /* ReporterBackendInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReporterBackendInteraction.h; sourceTree = "<group>"; };
 		B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReporterBackendInteraction.m; sourceTree = "<group>"; };
 		B623218D15C4BBA9008FC119 /* LivePortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortViewController.h; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 		B64BB58D15C4840A00E81E3B /* LivePort */ = {
 			isa = PBXGroup;
 			children = (
+				B6172DEF15C5012E00C907C2 /* LivePortTabBarViewController.h */,
+				B6172DF015C5012E00C907C2 /* LivePortTabBarViewController.m */,
 				B62321B515C4CB34008FC119 /* MapView */,
 				B62321B315C4CAE1008FC119 /* Back-end Syncing */,
 				B62321B415C4CAEC008FC119 /* Reporting */,
@@ -461,6 +466,7 @@
 				B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */,
 				B623219415C4C8EF008FC119 /* LivePortInfosView.m in Sources */,
 				B6172DE515C4D2FE00C907C2 /* ReportWhatViewController.m in Sources */,
+				B6172DF115C5012E00C907C2 /* LivePortTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
