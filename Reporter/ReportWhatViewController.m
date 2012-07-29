@@ -22,7 +22,7 @@
     
     if (self) {
     
-        
+        categories = @[ @"Road Block", @"Checkpoint", @"Police Sighting", @"Other" ];
     
     }
     return self;
@@ -53,11 +53,21 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [userStories count];
+    return [categories count];
 }
 
-
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // See if there's an existing cell we can reuse
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Foobar"];
+    if (cell == nil) {
+        // No cell to reuse => create a new one
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
+    }
+    
+    cell.textLabel.text = [categories objectAtIndex:indexPath.row];
+    
+    return cell;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

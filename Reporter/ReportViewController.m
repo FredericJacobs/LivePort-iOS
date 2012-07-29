@@ -23,14 +23,51 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        accurateLocation = FALSE;
     }
     return self;
+}
+
+-(void) loadLocation {
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    [locationManager startUpdatingLocation];
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    accurateLocation = TRUE;
+    
+    decLoc = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
+    int degrees = newLocation.coordinate.latitude;
+    double decimal = fabs(newLocation.coordinate.latitude - degrees);
+    int minutes = decimal * 60;
+    double seconds = decimal * 3600 - minutes * 60;
+    latitude = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
+                     degrees, minutes, seconds];
+    degrees = newLocation.coordinate.longitude;
+    decimal = fabs(newLocation.coordinate.longitude - degrees);
+    minutes = decimal * 60;
+    seconds = decimal * 3600 - minutes * 60;
+    
+    decLoc = [[NSString stringWithString:decLoc] stringByAppendingString:[NSString stringWithFormat:@",%f",newLocation.coordinate.longitude ]];
+    
+    longitude = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
+                       degrees, minutes, seconds];
+    
+    [maintable reloadData];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadLocation];
     
     
 }
@@ -47,6 +84,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    if (section == 1) {
+        if (accurateLocation) {
+            return 3;
+        }
+    }
+    
+    
     return 1;
 }
 
@@ -57,23 +102,69 @@
         // No cell to reuse => create a new one
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ReportTableViewCell"];
         
+    }
+    if (indexPath.section == 0 ) {
         // Initialize cell
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        cell.textLabel.textColor = [UIColor blueColor];
-        cell.textLabel.text = @"Select";
+        cell.textLabel.text = @"Category";
+        cell.detailTextLabel.text = nil;
         // TODO: Any other initialization that applies to all cells of this type.
         //       (Possibly create and add subviews, assign tags, etc.)
     }
+    else if (indexPath.section == 1){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportLocationViewCell"];
+        if (!accurateLocation) {
+            cell.textLabel.text = @"Location Loading";
+            cell.textLabel.textAlignment = UITextAlignmentCenter;
+        }
+        else {
+            if (indexPath.row == 0) {
+                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ReportLocationViewCell"];
+
+                cell.textLabel.text = @"Latitude";
+                cell.detailTextLabel.text = latitude;
+            }
+            
+            if (indexPath.row == 1) {
+                
+                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ReportLocationViewCell"];
+                cell.textLabel.text = @"Longitude";
+                cell.detailTextLabel.text = longitude;
+            }
+            
+            if (indexPath.row == 2) {
+                cell.textLabel.textAlignment = UITextAlignmentCenter;
+                cell.textLabel.text = @"Map It";
+
+            }
+
+        }
+        
+    }
     
-    
+    else if (indexPath.section == 2){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportTimeViewCell"];
+        cell.textLabel.text = [[[NSDate alloc] init] descriptionWithLocale:[NSLocale currentLocale]];
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    [[self navigationController] pushViewController:[[ReportWhatViewController alloc]initWithStyle:UITableViewStyleGrouped] animated:YES];
-     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        [[self navigationController] pushViewController:[[ReportWhatViewController alloc]initWithStyle:UITableViewStyleGrouped] animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+   
+    if (indexPath.section == 1) {
+        if (indexPath.row == 2) {
+            UIApplication *app = [UIApplication sharedApplication];
+            NSString *coordinates = [NSString stringWithFormat:@"%@,%@",latitude,longitude];
+            NSLog(@"%@",coordinates);
+            [app openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@",decLoc]]];
+        }
+    }
     
 }
 

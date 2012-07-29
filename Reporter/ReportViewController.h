@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ReportViewController : UIViewController <UITableViewDataSource, UITableViewDataSource>{
-    
+@interface ReportViewController : UIViewController <UITableViewDataSource, UITableViewDataSource, CLLocationManagerDelegate>{
+    CLLocationManager *locationManager;
     IBOutlet UITableView *maintable;
-    
+    NSString *latitude;
+    NSString *longitude;
+    NSString *decLoc;
+    BOOL accurateLocation;
 
 }
 

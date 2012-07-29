@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ReportWhatViewController : UITableViewController{
-    NSArray *userStories;
+    NSArray *categories;
 }
 
 
