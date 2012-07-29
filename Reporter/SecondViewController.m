@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 #import "ReporterBackendInteraction.h"
 #import "ReportingNavigationViewController.h"
+#import "LivePortViewController.h"
 
 @interface SecondViewController ()
 
@@ -58,6 +59,14 @@
         
         [self presentModalViewController:fpController animated:YES];
 	}
+    
+    else if (buttonIndex == 2){
+        
+        LivePortViewController *livePort = [[LivePortViewController alloc] init];
+        
+        [self presentModalViewController:livePort animated:YES];
+        
+    }
     
 }
 

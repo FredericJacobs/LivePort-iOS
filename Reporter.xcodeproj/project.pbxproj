@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */; };
+		B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218E15C4BBA9008FC119 /* LivePortViewController.m */; };
 		B64BB58815C4840A00E81E3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58715C4840A00E81E3B /* UIKit.framework */; };
 		B64BB58A15C4840A00E81E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58915C4840A00E81E3B /* Foundation.framework */; };
 		B64BB58C15C4840A00E81E3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58B15C4840A00E81E3B /* CoreGraphics.framework */; };
@@ -70,6 +71,8 @@
 /* Begin PBXFileReference section */
 		B623218515C4B8B1008FC119 /* ReporterBackendInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReporterBackendInteraction.h; sourceTree = "<group>"; };
 		B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReporterBackendInteraction.m; sourceTree = "<group>"; };
+		B623218D15C4BBA9008FC119 /* LivePortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortViewController.h; sourceTree = "<group>"; };
+		B623218E15C4BBA9008FC119 /* LivePortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePortViewController.m; sourceTree = "<group>"; };
 		B64BB58315C4840A00E81E3B /* Reporter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reporter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64BB58715C4840A00E81E3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B64BB58915C4840A00E81E3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -233,6 +236,8 @@
 		B64BB58D15C4840A00E81E3B /* Reporter */ = {
 			isa = PBXGroup;
 			children = (
+				B623218D15C4BBA9008FC119 /* LivePortViewController.h */,
+				B623218E15C4BBA9008FC119 /* LivePortViewController.m */,
 				B623218515C4B8B1008FC119 /* ReporterBackendInteraction.h */,
 				B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */,
 				B64BB59615C4840A00E81E3B /* AppDelegate.h */,
@@ -392,6 +397,7 @@
 				B6FBB02215C4A7D70019C32E /* ReportingNavigationViewController.m in Sources */,
 				B6FBB02615C4A7F40019C32E /* ReportViewController.m in Sources */,
 				B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */,
+				B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
