@@ -14,6 +14,7 @@
 @end
 
 @implementation MapViewController
+@synthesize map;
 
 - (void)viewDidLoad
 {

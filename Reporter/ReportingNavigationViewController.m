@@ -15,7 +15,7 @@
 @end
 
 @implementation ReportingNavigationViewController
-
+@synthesize reportButton;
 - (void)viewDidLoad
 {
     self.view.frame = [[UIScreen mainScreen] bounds];

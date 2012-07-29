@@ -9,22 +9,23 @@
 #import "LivePortViewController.h"
 #import "ReporterBackendInteraction.h"
 @implementation LivePortViewController {
-    
+    OTSubscriber* _subscriber;
     OTSession* _session;
     OTPublisher* _publisher;
 }
-@synthesize pickerView,details;
+@synthesize pickerView,details,segmented;
 static double widgetHeight = 240;
 static double widgetWidth = 320;
 static NSString* const kApiKey = @"1127";
 static NSString* const kToken = @"devtoken";
 static NSString* const kSessionId = @"1sdemo00855f8290f8efa648d9347d718f7e06fd";
 
+static bool subscribeToSelf = NO;
 
 // To test the session in a web page,
 // go to http://staging.tokbox.com/opentok/api/tools/js/tutorials/helloworld.html
 // For a unique API key, go to http://staging.tokbox.com/hl/session/create
-static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to streams other than your own.
+
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
     
@@ -43,6 +44,62 @@ static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to s
         // Custom initialization
     }
     return self;
+}
+
+- (void)updateSubscriber {
+    for (NSString* streamId in _session.streams) {
+        OTStream* stream = [_session.streams valueForKey:streamId];
+        if (![stream.connection.connectionId isEqualToString: _session.connection.connectionId]) {
+            _subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
+            break;
+        }
+    }
+}
+
+- (void)session:(OTSession*)mySession didReceiveStream:(OTStream*)stream
+{
+    NSLog(@"session didReceiveStream (%@)", stream.streamId);
+    
+    // See the declaration of subscribeToSelf above.
+    if ( (subscribeToSelf && [stream.connection.connectionId isEqualToString: _session.connection.connectionId])
+        ||
+        (!subscribeToSelf && ![stream.connection.connectionId isEqualToString: _session.connection.connectionId])
+        ) {
+        if (!_subscriber) {
+            _subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
+        }
+    }
+}
+
+
+- (void)subscriberDidConnectToStream:(OTSubscriber*)subscriber
+{
+    NSLog(@"subscriberDidConnectToStream (%@)", subscriber.stream.connection.connectionId);
+    [subscriber.view setFrame:CGRectMake(0, 0, widgetWidth, widgetHeight)];
+    [subscriber.view setAlpha:1];
+    subscriberView = subscriber.view;
+    [self.view addSubview:subscriber.view];
+}
+
+- (void)showAlert:(NSString*)string {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message from video session"
+                                                    message:string
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void)session:(OTSession*)session didDropStream:(OTStream*)stream{
+    NSLog(@"session didDropStream (%@)", stream.streamId);
+    NSLog(@"_subscriber.stream.streamId (%@)", _subscriber.stream.streamId);
+    if (!subscribeToSelf
+        && _subscriber
+        && [_subscriber.stream.streamId isEqualToString: stream.streamId])
+    {
+        _subscriber = nil;
+        [self updateSubscriber];
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
@@ -115,6 +172,7 @@ static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to s
     [_publisher setName:[[UIDevice currentDevice] name]];
     _publisher.cameraPosition = AVCaptureDevicePositionBack;
     [_session publish:_publisher];
+    publisherView = _publisher.view;
     [self.view addSubview:_publisher.view];
     [_publisher.view setFrame:CGRectMake(0, 0, widgetWidth, widgetHeight)];
 }
@@ -133,28 +191,7 @@ static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to s
 }
 
 
-- (void)session:(OTSession*)mySession didReceiveStream:(OTStream*)stream
-{
-    NSLog(@"session didReceiveStream (%@)", stream.streamId);
-    
-    // See the declaration of subscribeToSelf above.
-    if ( (subscribeToSelf && [stream.connection.connectionId isEqualToString: _session.connection.connectionId])
-        ||
-        (!subscribeToSelf && ![stream.connection.connectionId isEqualToString: _session.connection.connectionId])
-        ) {
-    }
-}
 
-- (void)session:(OTSession*)session didDropStream:(OTStream*)stream{
-    NSLog(@"session didDropStream (%@)", stream.streamId);
-}
-
-- (void)subscriberDidConnectToStream:(OTSubscriber*)subscriber
-{
-    NSLog(@"subscriberDidConnectToStream (%@)", subscriber.stream.connection.connectionId);
-    [subscriber.view setFrame:CGRectMake(0, widgetHeight, widgetWidth, widgetHeight)];
-    [self.view addSubview:subscriber.view];
-}
 
 - (void)publisher:(OTPublisher*)publisher didFailWithError:(OTError*) error {
     NSLog(@"publisher didFailWithError %@", error);
@@ -173,15 +210,24 @@ static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to s
 }
 
 
-- (void)showAlert:(NSString*)string {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message from video session"
-                                                    message:string
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+-(IBAction) segmentedControlIndexChanged{
+	switch (self.segmented.selectedSegmentIndex) {
+		case 0:
+			[publisherView setAlpha:0];
+            [subscriberView setAlpha:1];
+            NSLog(@"Me");
+			break;
+		case 1:
+			[publisherView setAlpha:1];
+            [subscriberView setAlpha:0];
+            NSLog(@"You");
+			break;
+            
+		default:
+            break;
+    }
+    
 }
-
 
 - (void)viewDidUnload
 {
