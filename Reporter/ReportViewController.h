@@ -16,7 +16,7 @@
     NSString *longitude;
     NSString *decLoc;
     BOOL accurateLocation;
-
+    UITextField *textFieldRounded;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *maintable;

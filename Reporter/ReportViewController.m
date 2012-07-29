@@ -13,7 +13,7 @@
 
 @end
 
-#define sectionsArray [NSArray arrayWithObjects: @"What ?",@"Where ?",@"When ?",@"Tell Us More",nil]
+#define sectionsArray [NSArray arrayWithObjects: @"What ?",@"Where ?",@"When ?",nil]
 
 @implementation ReportViewController
 
@@ -28,8 +28,9 @@
     return self;
 }
 
+
+
 -(void) loadLocation {
-    
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
@@ -42,6 +43,10 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    if (accurateLocation == TRUE) {
+        return;
+    }
+    
     accurateLocation = TRUE;
     
     decLoc = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
@@ -62,6 +67,7 @@
                        degrees, minutes, seconds];
     
     [maintable reloadData];
+    
 }
 
 - (void)viewDidLoad
@@ -85,15 +91,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    if (section == 0) {
+        return 2;
+    }
+    
     if (section == 1) {
         if (accurateLocation) {
             return 3;
         }
     }
-    
-    if (section == 3) {
-        return 1;
-    }
+
     
     return 1;
 }
@@ -107,12 +114,31 @@
         
     }
     if (indexPath.section == 0 ) {
+        if (indexPath.row == 0 ) {
         // Initialize cell
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         cell.textLabel.text = @"Category";
         cell.detailTextLabel.text = nil;
         // TODO: Any other initialization that applies to all cells of this type.
         //       (Possibly create and add subviews, assign tags, etc.)
+        }
+        if (indexPath.row == 1) {
+            
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportDescription"];
+            
+            textFieldRounded = [[UITextField alloc]initWithFrame:CGRectMake(15, 0, 300, 100)];
+            textFieldRounded.textColor = [UIColor blackColor];
+            textFieldRounded.font = [UIFont systemFontOfSize:17.0];
+            textFieldRounded.placeholder = @"Description";
+            textFieldRounded.backgroundColor = [UIColor clearColor];
+            textFieldRounded.autocorrectionType = UITextAutocorrectionTypeNo;
+            textFieldRounded.keyboardType = UIKeyboardTypeDefault;
+            textFieldRounded.returnKeyType = UIReturnKeyDone;
+            textFieldRounded.delegate = self;
+            [cell addSubview:textFieldRounded];
+    
+        }
+        
     }
     else if (indexPath.section == 1){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportLocationViewCell"];
@@ -123,7 +149,7 @@
         else {
             if (indexPath.row == 0) {
                 cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ReportLocationViewCell"];
-
+                
                 cell.textLabel.text = @"Latitude";
                 cell.detailTextLabel.text = latitude;
             }
@@ -151,27 +177,19 @@
         cell.textLabel.textAlignment = UITextAlignmentCenter;
     }
     
-    else if (indexPath.section == 3) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportDescription"];
-        
-        UITextField *textFieldRounded = [[UITextField alloc]initWithFrame:CGRectMake(10, 0, 300, 100)];
-        textFieldRounded.borderStyle = UITextBorderStyleRoundedRect;
-        textFieldRounded.textColor = [UIColor blackColor];
-        textFieldRounded.font = [UIFont systemFontOfSize:17.0];
-        textFieldRounded.placeholder = @"Enter Your name";  //place holder
-        textFieldRounded.backgroundColor = [UIColor whiteColor];
-        textFieldRounded.autocorrectionType = UITextAutocorrectionTypeNo;
-        textFieldRounded.keyboardType = UIKeyboardTypeDefault;
-        textFieldRounded.returnKeyType = UIReturnKeyDone;
-        textFieldRounded.delegate = self;
-        
-        [cell addSubview:textFieldRounded];
-    }
-    
-    
     return cell;
 }
 
+- (BOOL) textFieldShouldReturn:(UITextField *)theTextField
+{
+    NSLog(@"textFieldShouldReturn Fired :)");
+    [textFieldRounded resignFirstResponder];
+    return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    [self.view endEditing:YES];
+}
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -197,8 +215,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 3) {
-        return 100;
+    if (indexPath.section == 0) {
+        if(indexPath.row == 1)
+            return 100;
     }
     
     return 44;
