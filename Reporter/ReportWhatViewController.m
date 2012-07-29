@@ -21,9 +21,10 @@
     
     if (self) {
     
-        categories = @[ @"Road Block", @"Checkpoint", @"Police Sighting", @"Other" ];
-    
     }
+    
+    categories = [NSArray arrayWithArray:[[ReporterBackendInteraction sharedManager] categories]];
+    
     return self;
 }
 

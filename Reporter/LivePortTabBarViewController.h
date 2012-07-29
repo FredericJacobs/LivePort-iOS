@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "LivePortLoginView.h"
 
 @interface LivePortTabBarViewController : UITabBarController{
-       UIImageView *defaultView;
+    UIImageView *defaultView;
+    LivePortLoginView *loginView;
+    
 }
+
+@property (nonatomic, retain) IBOutlet LivePortLoginView *loginView;
 
 @end

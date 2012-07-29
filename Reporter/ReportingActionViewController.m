@@ -60,7 +60,7 @@
     
     else if (buttonIndex == 2){
         
-        LivePortViewController *livePort = [[LivePortViewController alloc] init];
+        LivePortViewController *livePort = [[LivePortViewController alloc] initWithNibName:@"LivePortInfosViewController" bundle:nil];
         
         [self presentModalViewController:livePort animated:YES];
         

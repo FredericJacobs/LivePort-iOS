@@ -7,12 +7,13 @@
 //
 
 #import "LivePortViewController.h"
-
+#import "ReporterBackendInteraction.h"
 @implementation LivePortViewController {
+    
     OTSession* _session;
     OTPublisher* _publisher;
 }
-
+@synthesize pickerView,details;
 static double widgetHeight = 240;
 static double widgetWidth = 320;
 static NSString* const kApiKey = @"1127";
@@ -25,6 +26,16 @@ static NSString* const kSessionId = @"1sdemo00855f8290f8efa648d9347d718f7e06fd";
 // For a unique API key, go to http://staging.tokbox.com/hl/session/create
 static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to streams other than your own.
 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+    
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return [[[ReporterBackendInteraction sharedManager] categories] count];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,15 +45,61 @@ static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to s
     return self;
 }
 
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [[[ReporterBackendInteraction sharedManager] categories] objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    [[ReporterBackendInteraction sharedManager]setSelectedString:[[[ReporterBackendInteraction sharedManager] categories]objectAtIndex:row]];
+    
+    [UIView animateWithDuration:0.7
+                     animations:^{
+                         [pickerView setAlpha:0];
+                         [pickerView setTransform:CGAffineTransformMakeTranslation(0, -216.0)];
+                     }
+                     completion:^(BOOL finished){
+                         [pickerView removeFromSuperview];
+                     }];
+    
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.view setBackgroundColor:[UIColor clearColor]];
+    
     _session = [[OTSession alloc] initWithSessionId:kSessionId
                                            delegate:self];
-    
     [self doConnect];
+    
+    [self.view addSubview:[[LivePortInfosView alloc]init]];
+    
 }
 
+
+- (IBAction)showCategoriesPicker:(id)sender{
+    
+    [pickerView setFrame:CGRectMake(0, 460, 320,216)];
+    
+    [self.view addSubview:pickerView];
+    
+    [UIView animateWithDuration:0.7
+                     animations:^{
+                         [pickerView setAlpha:1];
+                         [pickerView setTransform:CGAffineTransformMakeTranslation(0, -216.0)];
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+}
+
+
+- (IBAction)done:(id)sender{
+    
+    [[self presentingViewController]dismissModalViewControllerAnimated:YES];
+}
 
 
 #pragma mark - OpenTok methods

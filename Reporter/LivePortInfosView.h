@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LivePortInfosView : UIView
+@interface LivePortInfosView : UIView{
+    
+}
 
 @end

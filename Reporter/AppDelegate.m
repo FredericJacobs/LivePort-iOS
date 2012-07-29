@@ -13,14 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    animatedLaunch = TRUE;
     
-    if([[ReporterBackendInteraction sharedManager]userIsLoggedIn]){
-        [[ReporterBackendInteraction sharedManager]createAReportWithType:@"sniper" description:@"Yet ANother Sniper" latitude:@"0000000" longitude:@"0000" imageURL:nil live_stream:nil];
-    }
-    else{
-        [[ReporterBackendInteraction sharedManager]authWithUsername:@"fred" andPassword:@"fj326400"];
-    }
+    animatedLaunch = TRUE;
     return YES;
 }
 

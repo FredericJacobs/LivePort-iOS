@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <Opentok/Opentok.h>
+#import "LivePortInfosView.h"
 
-@interface LivePortViewController : UIViewController <OTSessionDelegate, OTPublisherDelegate>{
-    UIView *details;
+@interface LivePortViewController : UIViewController <OTSessionDelegate, OTPublisherDelegate, UIPickerViewDelegate, UIPickerViewDataSource>{
+    IBOutlet LivePortInfosView *details;
+    IBOutlet UIPickerView *pickerView;
 }
-
+@property (nonatomic,retain) LivePortInfosView *details;
+@property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
 - (void)doConnect;
 - (void)doPublish;
 - (void)showAlert:(NSString*)string;

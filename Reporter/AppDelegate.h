@@ -11,7 +11,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     
     BOOL animatedLaunch;
-    UIImageView *defaultView;
     
 }
 - (BOOL) animatedLaunch;

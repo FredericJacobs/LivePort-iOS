@@ -7,12 +7,13 @@
 //
 
 #import "LivePortTabBarViewController.h"
-
+#import "ReporterBackendInteraction.h"
 @interface LivePortTabBarViewController ()
 
 @end
 
 @implementation LivePortTabBarViewController
+@synthesize loginView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +34,11 @@
      {
          [defaultView removeFromSuperview];
      }];
+    
+    if (![[ReporterBackendInteraction sharedManager]userIsLoggedIn]) {
+        loginView = [[LivePortLoginView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+        [self.view addSubview:loginView];
+    }
 }
 
 
@@ -43,6 +49,7 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated{
+    
     AppDelegate  *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     if ([appDelegate animatedLaunch]){

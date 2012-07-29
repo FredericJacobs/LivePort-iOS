@@ -15,10 +15,13 @@
     NSString *token;
     NSString *username;
     NSString *pictureURL;
+    NSArray *categories;
 }
 
 @property (nonatomic,retain) NSString *selectedString;
 @property (nonatomic,retain) NSString *pictureURL;
+@property (nonatomic,readonly) NSString *username;
+@property (nonatomic,readonly) NSArray *categories;
 
 + (id)sharedManager;
 - (void) authWithUsername:(NSString*)usernames andPassword:(NSString*)password;

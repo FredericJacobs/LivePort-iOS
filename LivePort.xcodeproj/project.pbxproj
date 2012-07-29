@@ -60,6 +60,12 @@
 		B668911E15C56227008589A1 /* plus-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B668911A15C56227008589A1 /* plus-button.png */; };
 		B668911F15C56227008589A1 /* plus-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B668911B15C56227008589A1 /* plus-button@2x.png */; };
 		B681DF7F15C55EB500297CD7 /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B681DF7B15C55E9800297CD7 /* libSDWebImageARC.a */; };
+		B6989CF215C5959F00984639 /* LivePortLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6989CF115C5959F00984639 /* LivePortLoginView.m */; };
+		B6989CF515C597C900984639 /* loginBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6989CF315C597C900984639 /* loginBackground@2x.png */; };
+		B6989CF615C597C900984639 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B6989CF415C597C900984639 /* loginBackground.png */; };
+		B6B1D95715C57E2E00CEDD5E /* cars_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = B6B1D95515C57E2E00CEDD5E /* cars_iphone.png */; };
+		B6B1D95815C57E2E00CEDD5E /* cars_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6B1D95615C57E2E00CEDD5E /* cars_iphone@2x.png */; };
+		B6EB0C7F15C581930026CB65 /* LivePortInfosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6EB0C7E15C581930026CB65 /* LivePortInfosViewController.xib */; };
 		B6FBAFDD15C4A1A60019C32E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFD815C4A1A60019C32E /* CoreTelephony.framework */; };
 		B6FBAFDE15C4A1A60019C32E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFD915C4A1A60019C32E /* MobileCoreServices.framework */; };
 		B6FBAFDF15C4A1A60019C32E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFDA15C4A1A60019C32E /* CFNetwork.framework */; };
@@ -198,6 +204,13 @@
 		B668911A15C56227008589A1 /* plus-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-button.png"; sourceTree = "<group>"; };
 		B668911B15C56227008589A1 /* plus-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-button@2x.png"; sourceTree = "<group>"; };
 		B681DF6F15C55E9800297CD7 /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SDWebImage.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B6989CF015C5959F00984639 /* LivePortLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortLoginView.h; sourceTree = "<group>"; };
+		B6989CF115C5959F00984639 /* LivePortLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePortLoginView.m; sourceTree = "<group>"; };
+		B6989CF315C597C900984639 /* loginBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginBackground@2x.png"; sourceTree = "<group>"; };
+		B6989CF415C597C900984639 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBackground.png; sourceTree = "<group>"; };
+		B6B1D95515C57E2E00CEDD5E /* cars_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cars_iphone.png; sourceTree = "<group>"; };
+		B6B1D95615C57E2E00CEDD5E /* cars_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cars_iphone@2x.png"; sourceTree = "<group>"; };
+		B6EB0C7E15C581930026CB65 /* LivePortInfosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivePortInfosViewController.xib; sourceTree = "<group>"; };
 		B6FBAFD815C4A1A60019C32E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B6FBAFD915C4A1A60019C32E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B6FBAFDA15C4A1A60019C32E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -288,10 +301,13 @@
 		B62321B215C4CACF008FC119 /* LivePort */ = {
 			isa = PBXGroup;
 			children = (
+				B6989CF015C5959F00984639 /* LivePortLoginView.h */,
+				B6989CF115C5959F00984639 /* LivePortLoginView.m */,
 				B6172DEF15C5012E00C907C2 /* LivePortTabBarViewController.h */,
 				B6172DF015C5012E00C907C2 /* LivePortTabBarViewController.m */,
 				B623218D15C4BBA9008FC119 /* LivePortViewController.h */,
 				B623218E15C4BBA9008FC119 /* LivePortViewController.m */,
+				B6EB0C7E15C581930026CB65 /* LivePortInfosViewController.xib */,
 				B623219215C4C8EF008FC119 /* LivePortInfosView.h */,
 				B623219315C4C8EF008FC119 /* LivePortInfosView.m */,
 			);
@@ -430,6 +446,8 @@
 				B64BB59615C4840A00E81E3B /* AppDelegate.h */,
 				B64BB59715C4840A00E81E3B /* AppDelegate.m */,
 				B64BB59915C4840A00E81E3B /* MainStoryboard.storyboard */,
+				B6989CF315C597C900984639 /* loginBackground@2x.png */,
+				B6989CF415C597C900984639 /* loginBackground.png */,
 				B6172DFE15C50C8800C907C2 /* tabmap.png */,
 				B63B220815C52149007CE107 /* linen.png */,
 				B63B220915C52149007CE107 /* linen@2x.png */,
@@ -437,6 +455,8 @@
 				B668911915C56227008589A1 /* banner@2x.png */,
 				B668911A15C56227008589A1 /* plus-button.png */,
 				B668911B15C56227008589A1 /* plus-button@2x.png */,
+				B6B1D95515C57E2E00CEDD5E /* cars_iphone.png */,
+				B6B1D95615C57E2E00CEDD5E /* cars_iphone@2x.png */,
 				B6172DFF15C50C8800C907C2 /* tabmap@2x.png */,
 				B6172E0215C50CC300C907C2 /* Toolbarmore.png */,
 				B6172E0315C50CC300C907C2 /* Toolbarmore@2x.png */,
@@ -593,6 +613,11 @@
 				B668911D15C56227008589A1 /* banner@2x.png in Resources */,
 				B668911E15C56227008589A1 /* plus-button.png in Resources */,
 				B668911F15C56227008589A1 /* plus-button@2x.png in Resources */,
+				B6B1D95715C57E2E00CEDD5E /* cars_iphone.png in Resources */,
+				B6B1D95815C57E2E00CEDD5E /* cars_iphone@2x.png in Resources */,
+				B6EB0C7F15C581930026CB65 /* LivePortInfosViewController.xib in Resources */,
+				B6989CF515C597C900984639 /* loginBackground@2x.png in Resources */,
+				B6989CF615C597C900984639 /* loginBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +671,7 @@
 				B63B222F15C5340A007CE107 /* ASIDownloadCache.m in Sources */,
 				B63B223015C5340A007CE107 /* ASIDataDecompressor.m in Sources */,
 				B63B223115C5340A007CE107 /* ASIDataCompressor.m in Sources */,
+				B6989CF215C5959F00984639 /* LivePortLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

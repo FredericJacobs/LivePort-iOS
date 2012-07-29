@@ -13,7 +13,7 @@ static NSString *const kTokenURL = @"/api/v1/tokens.json";
 static NSString *const kReport = @"/reports";
 
 @implementation ReporterBackendInteraction
-@synthesize selectedString;
+@synthesize selectedString, categories;
 
 
 + (id)sharedManager {
@@ -23,6 +23,12 @@ static NSString *const kReport = @"/reports";
         sharedMyManager = [[self alloc] init];
     });
     return sharedMyManager;
+}
+
+- (void) updateCategories {
+
+// TO DO
+
 }
 
 - (BOOL) userIsLoggedIn{
@@ -97,10 +103,13 @@ latitude longitude:(NSString*) longitude imageURL:(NSString*)image_url live_stre
     if (self = [super init]) {
         
     }
+    
+    categories = @[@"Road Block", @"Checkpoint", @"Police Sighting", @"Other" ];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"token"] != nil) {
+        NSLog(@"%@",token);
         token = [defaults objectForKey:@"token"];
-        NSLog(@"Loading old token");
     }
     
     return self;
