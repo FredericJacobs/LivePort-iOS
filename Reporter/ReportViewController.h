@@ -11,7 +11,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MapKit/MapKit.h>
 
-@interface ReportViewController : UIViewController <UITableViewDataSource, UITableViewDataSource, CLLocationManagerDelegate, UITextFieldDelegate>{
+@interface ReportViewController : UIViewController <UITableViewDataSource, UITableViewDataSource, CLLocationManagerDelegate, UITextFieldDelegate, MKMapViewDelegate>{
     CLLocationManager *locationManager;
     IBOutlet UITableView *maintable;
     NSString *latitude;
@@ -22,7 +22,7 @@
     NSString *pictureURL;
     NSMutableArray *sectionsArray;
     UIImageView *imageView;
-    
+    MKMapView *mapview;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *maintable;

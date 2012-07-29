@@ -39,7 +39,7 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     [locationManager startUpdatingLocation];
     
 }
@@ -102,10 +102,13 @@
     
     if (section == 1) {
         if (accurateLocation) {
-            return 3;
+            return 1;
         }
     }
     
+    if (section == 2) {
+        return 2;
+    }
     
     return 1;
 }
@@ -158,39 +161,61 @@
         }
         else {
             if (indexPath.row == 0) {
-                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ReportLocationViewCell"];
-                
-                cell.textLabel.text = @"Latitude";
-                cell.detailTextLabel.text = latitude;
-            }
+                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportLocationViewCell"];
             
-            if (indexPath.row == 1) {
+                mapview = [[MKMapView alloc] initWithFrame:CGRectMake(10, 0, 300, 200)];
+                CLLocationCoordinate2D coord = {.latitude =  [[locationManager location]coordinate].latitude, .longitude =  [[locationManager location]coordinate].longitude};
+                MKCoordinateSpan span = {.latitudeDelta =  0.01, .longitudeDelta =  0.01};
+                MKCoordinateRegion region = {coord, span};
+                mapview.region = region;
                 
-                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ReportLocationViewCell"];
-                cell.textLabel.text = @"Longitude";
-                cell.detailTextLabel.text = longitude;
-            }
-            
-            if (indexPath.row == 2) {
-                cell.textLabel.textAlignment = UITextAlignmentCenter;
-                cell.textLabel.text = @"Map It";
-                
-            }
+                MKPointAnnotation *addAnnotation = [[MKPointAnnotation alloc] init];
+                addAnnotation.coordinate = coord;
+                [mapview addAnnotation:addAnnotation];
+                [mapview clipsToBounds];
+                [cell clipsToBounds];
+                [cell addSubview:mapview];
             
         }
     
     
     }
+}
 
 else if (indexPath.section == 2){
-    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportTimeViewCell"];
-    cell.textLabel.text = [[[NSDate alloc] init] descriptionWithLocale:[NSLocale currentLocale]];
-    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"ReportTimeViewCell"];
+    
+    NSDate *localDate = [NSDate date];
+    
+    if (indexPath.row == 0 ) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        dateFormatter.dateFormat = @"MM/dd/yy";
+        
+        NSString *dateString = [dateFormatter stringFromDate: localDate];
+        cell.textLabel.text = @"Day";
+        cell.detailTextLabel.text = dateString;
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+                               
+    }
+    
+    if (indexPath.row == 1) {
+        
+        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
+        timeFormatter.dateFormat = @"HH:mm:ss";
+        
+        
+        NSString *dateString = [timeFormatter stringFromDate: localDate];
+        cell.detailTextLabel.text = dateString;
+        cell.textLabel.text = @"Hour";
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+
+    }
+
 }
 
 else if (indexPath.section == 3){
     cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportImageViewCell"];
-    UIImageView *pict = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, 300, 245)];
+    UIImageView *pict = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, 300, 225)];
     [pict setImageWithURL:[NSURL URLWithString:pictureURL]];
     
     [cell addSubview:pict];
@@ -259,6 +284,12 @@ return cell;
     
     if (indexPath.section == 3) {
         return 225;
+    }
+    
+    if (indexPath.section == 1) {
+        if (accurateLocation) {
+            return 200;
+        }
     }
     
     return 44;
