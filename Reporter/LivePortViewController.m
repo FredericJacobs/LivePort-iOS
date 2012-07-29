@@ -13,11 +13,14 @@
     OTPublisher* _publisher;
     OTSubscriber* _subscriber;
 }
+
 static double widgetHeight = 240;
 static double widgetWidth = 320;
 static NSString* const kApiKey = @"1127";
 static NSString* const kToken = @"devtoken";
 static NSString* const kSessionId = @"1sdemo00855f8290f8efa648d9347d718f7e06fd";
+
+
 // To test the session in a web page,
 // go to http://staging.tokbox.com/opentok/api/tools/js/tutorials/helloworld.html
 // For a unique API key, go to http://staging.tokbox.com/hl/session/create

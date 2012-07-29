@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */; };
 		B623218F15C4BBA9008FC119 /* LivePortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B623218E15C4BBA9008FC119 /* LivePortViewController.m */; };
+		B623219115C4C22C008FC119 /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B623219015C4C22C008FC119 /* opentok.bundle */; };
 		B64BB58815C4840A00E81E3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58715C4840A00E81E3B /* UIKit.framework */; };
 		B64BB58A15C4840A00E81E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58915C4840A00E81E3B /* Foundation.framework */; };
 		B64BB58C15C4840A00E81E3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB58B15C4840A00E81E3B /* CoreGraphics.framework */; };
@@ -49,10 +50,7 @@
 		B6FBAFF815C4A1B80019C32E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFF115C4A1B80019C32E /* UIKit.framework */; };
 		B6FBAFF915C4A1B80019C32E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFF215C4A1B80019C32E /* Foundation.framework */; };
 		B6FBAFFA15C4A1B80019C32E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFF315C4A1B80019C32E /* CoreGraphics.framework */; };
-		B6FBAFFC15C4A1CC0019C32E /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B6FBAFFB15C4A1CC0019C32E /* opentok.bundle */; };
 		B6FBAFFE15C4A1D90019C32E /* Opentok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FBAFFD15C4A1D90019C32E /* Opentok.framework */; };
-		B6FBB01315C4A7830019C32E /* ReportingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FBB01115C4A7830019C32E /* ReportingViewController.m */; };
-		B6FBB01415C4A7830019C32E /* ReportingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FBB01215C4A7830019C32E /* ReportingViewController.xib */; };
 		B6FBB02215C4A7D70019C32E /* ReportingNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FBB02115C4A7D70019C32E /* ReportingNavigationViewController.m */; };
 		B6FBB02615C4A7F40019C32E /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FBB02415C4A7F40019C32E /* ReportViewController.m */; };
 		B6FBB02915C4AA300019C32E /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FBB02815C4AA300019C32E /* ReportViewController.xib */; };
@@ -73,6 +71,7 @@
 		B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReporterBackendInteraction.m; sourceTree = "<group>"; };
 		B623218D15C4BBA9008FC119 /* LivePortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortViewController.h; sourceTree = "<group>"; };
 		B623218E15C4BBA9008FC119 /* LivePortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePortViewController.m; sourceTree = "<group>"; };
+		B623219015C4C22C008FC119 /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = opentok.bundle; sourceTree = "<group>"; };
 		B64BB58315C4840A00E81E3B /* Reporter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reporter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64BB58715C4840A00E81E3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B64BB58915C4840A00E81E3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,11 +117,7 @@
 		B6FBAFF115C4A1B80019C32E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B6FBAFF215C4A1B80019C32E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B6FBAFF315C4A1B80019C32E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B6FBAFFB15C4A1CC0019C32E /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = opentok.bundle; path = "../../../Downloads/opentok-opentok-ios-sdk-055292b/Opentok.framework/Versions/A/Resources/opentok.bundle"; sourceTree = "<group>"; };
 		B6FBAFFD15C4A1D90019C32E /* Opentok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Opentok.framework; sourceTree = "<group>"; };
-		B6FBB01015C4A7830019C32E /* ReportingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportingViewController.h; sourceTree = "<group>"; };
-		B6FBB01115C4A7830019C32E /* ReportingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportingViewController.m; sourceTree = "<group>"; };
-		B6FBB01215C4A7830019C32E /* ReportingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportingViewController.xib; sourceTree = "<group>"; };
 		B6FBB02015C4A7D70019C32E /* ReportingNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportingNavigationViewController.h; sourceTree = "<group>"; };
 		B6FBB02115C4A7D70019C32E /* ReportingNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportingNavigationViewController.m; sourceTree = "<group>"; };
 		B6FBB02315C4A7F40019C32E /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
@@ -199,8 +194,8 @@
 		B64BB58615C4840A00E81E3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B623219015C4C22C008FC119 /* opentok.bundle */,
 				B6FBAFFD15C4A1D90019C32E /* Opentok.framework */,
-				B6FBAFFB15C4A1CC0019C32E /* opentok.bundle */,
 				B6FBAFED15C4A1B80019C32E /* libz.dylib */,
 				B6FBAFEE15C4A1B80019C32E /* libstdc++.dylib */,
 				B6FBAFEF15C4A1B80019C32E /* QuartzCore.framework */,
@@ -256,9 +251,6 @@
 				B64BB5A415C4840A00E81E3B /* SecondViewController.m */,
 				B64BB5A615C4840A00E81E3B /* second.png */,
 				B64BB5A815C4840A00E81E3B /* second@2x.png */,
-				B6FBB01015C4A7830019C32E /* ReportingViewController.h */,
-				B6FBB01115C4A7830019C32E /* ReportingViewController.m */,
-				B6FBB01215C4A7830019C32E /* ReportingViewController.xib */,
 				B64BB58E15C4840A00E81E3B /* Supporting Files */,
 			);
 			path = Reporter;
@@ -353,9 +345,8 @@
 				B64BB5A715C4840A00E81E3B /* second.png in Resources */,
 				B64BB5A915C4840A00E81E3B /* second@2x.png in Resources */,
 				B64BB5DA15C4953C00E81E3B /* FPPicker.bundle in Resources */,
-				B6FBAFFC15C4A1CC0019C32E /* opentok.bundle in Resources */,
-				B6FBB01415C4A7830019C32E /* ReportingViewController.xib in Resources */,
 				B6FBB02915C4AA300019C32E /* ReportViewController.xib in Resources */,
+				B623219115C4C22C008FC119 /* opentok.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +384,6 @@
 				B64BB59815C4840A00E81E3B /* AppDelegate.m in Sources */,
 				B64BB59E15C4840A00E81E3B /* FirstViewController.m in Sources */,
 				B64BB5A515C4840A00E81E3B /* SecondViewController.m in Sources */,
-				B6FBB01315C4A7830019C32E /* ReportingViewController.m in Sources */,
 				B6FBB02215C4A7D70019C32E /* ReportingNavigationViewController.m in Sources */,
 				B6FBB02615C4A7F40019C32E /* ReportViewController.m in Sources */,
 				B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */,
