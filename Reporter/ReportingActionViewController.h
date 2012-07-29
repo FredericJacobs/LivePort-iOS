@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <FPPicker/FPPicker.h>
+#import "ReportingNavigationViewController.h"
 
-@interface ReportingActionViewController : UIViewController <UIActionSheetDelegate, FPPickerDelegate>
+@interface ReportingActionViewController : UIViewController <UIActionSheetDelegate, FPPickerDelegate>{
+    ReportingNavigationViewController *reporting;
+}
 
 @end

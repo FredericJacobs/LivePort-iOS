@@ -113,6 +113,7 @@ static bool subscribeToSelf = YES; // Change to NO if you want to subscribe to s
 {
     _publisher = [[OTPublisher alloc] initWithDelegate:self];
     [_publisher setName:[[UIDevice currentDevice] name]];
+    _publisher.cameraPosition = AVCaptureDevicePositionBack;
     [_session publish:_publisher];
     [self.view addSubview:_publisher.view];
     [_publisher.view setFrame:CGRectMake(0, 0, widgetWidth, widgetHeight)];

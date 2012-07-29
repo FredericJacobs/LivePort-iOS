@@ -20,7 +20,67 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(successfulPosting:)
+                                                 name:@"SuccessfulPosting"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(failedPosting:)
+                                                 name:@"FailedPosting"
+                                               object:nil];
 }
+
+- (void) successfulPosting:(NSNotification *) notification
+{
+    [UIView animateWithDuration:1.0
+                     animations:^{
+                         [reporting dismissModalViewControllerAnimated:YES];
+                     }
+                     completion:^(BOOL finished){
+                         [self goBackToTheMapView];
+                         [reporting removeFromParentViewController];
+                }];
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Thanks for reporting !"
+                          message: @"This is now for the whole world to see"
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    
+    [alert show];
+    
+    
+}
+
+- (void) failedPosting:(NSNotification *) notification
+{
+    [UIView animateWithDuration:1.0
+                     animations:^{
+                         [reporting dismissModalViewControllerAnimated:YES];
+                     }
+                     completion:^(BOOL finished){
+                         [self goBackToTheMapView];
+                         [reporting removeFromParentViewController];
+                     }];
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Posting Failed"
+                          message: @"We are sorry to hear that. Try again later."
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    
+    [alert show];
+
+    
+        
+}
+
+
 
 - (void) viewDidAppear:(BOOL)animated{
     
@@ -43,7 +103,7 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
         
-        ReportingNavigationViewController *reporting = [[ReportingNavigationViewController alloc]init] ;
+        reporting = [[ReportingNavigationViewController alloc]init] ;
         
         [self presentViewController:reporting animated:YES completion:nil];
 		
@@ -79,12 +139,12 @@
 }
 
 - (void) FPPickerController:(FPPickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    [[ReporterBackendInteraction sharedManager] setPictureURL:[info objectForKey:@"FPPickerControllerRemoteURL"]];
-    
+    [[ReporterBackendInteraction sharedManager] setImage_url:[info objectForKey:@"FPPickerControllerRemoteURL"]];
+
     [self dismissViewControllerAnimated:YES completion:^(void){
-        ReportingNavigationViewController *reporting = [[ReportingNavigationViewController alloc]init] ;
+        reporting = [[ReportingNavigationViewController alloc]init] ;
         
-        [self presentViewController:reporting animated:YES completion:nil];
+    [self presentViewController:reporting animated:YES completion:nil];
     }];;
 }
 

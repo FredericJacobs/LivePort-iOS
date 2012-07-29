@@ -38,8 +38,8 @@
     if (![[ReporterBackendInteraction sharedManager]userIsLoggedIn]) {
         loginView = [[LivePortLoginView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
         
-        loginView.usernameField = [[UITextField alloc]initWithFrame:CGRectMake(50, 260, 260, 20)];
-        loginView.mPasswordField = [[UITextField alloc]initWithFrame:CGRectMake(50, 315, 260, 20)];
+        loginView.usernameField = [[UITextField alloc]initWithFrame:CGRectMake(50, 260, 260, 30)];
+        loginView.mPasswordField = [[UITextField alloc]initWithFrame:CGRectMake(50, 315, 260, 30)];
         
         
         loginView.usernameField.placeholder = @"Username";

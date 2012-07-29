@@ -26,10 +26,9 @@
     if (self) {
         sectionsArray = [NSMutableArray arrayWithObjects: @"What ?",@"Where ?",@"When ?",nil];
         accurateLocation = FALSE;
-        pictureURL = [[ReporterBackendInteraction sharedManager]pictureURL];
+        pictureURL = [[ReporterBackendInteraction sharedManager]image_url];
         if (pictureURL != nil) {
             [sectionsArray addObject:@"Image"];
-            [[ReporterBackendInteraction sharedManager]setPictureURL:nil];
         }
     }
     return self;
@@ -67,7 +66,7 @@
     minutes = decimal * 60;
     seconds = decimal * 3600 - minutes * 60;
     
-    [[ReporterBackendInteraction sharedManager] setLastLatitude:[NSString stringWithFormat:@"%f",newLocation.coordinate.longitude ]];
+    [[ReporterBackendInteraction sharedManager] setLastLongitude:[NSString stringWithFormat:@"%f",newLocation.coordinate.longitude ]];
     
     decLoc = [[NSString stringWithString:decLoc] stringByAppendingString:[NSString stringWithFormat:@",%f",newLocation.coordinate.longitude ]];
     
@@ -244,6 +243,7 @@ return cell;
     [textFieldRounded resignFirstResponder];
     
     if ([self readyToReport]) {
+        [[ReporterBackendInteraction sharedManager]setReportDescription:textFieldRounded.text];
         self.navigationItem.rightBarButtonItem.enabled = TRUE;
     }
     

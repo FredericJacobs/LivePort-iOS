@@ -13,7 +13,7 @@ static NSString *const kTokenURL = @"/api/v1/tokens.json";
 static NSString *const kReport = @"/reports";
 
 @implementation ReporterBackendInteraction
-@synthesize selectedString, categories,reportDescription, lastLatitude, lastLongitude;
+@synthesize selectedString, categories,reportDescription, lastLatitude, lastLongitude,image_url,username;
 
 
 + (id)sharedManager {
@@ -52,23 +52,26 @@ static NSString *const kReport = @"/reports";
     NSDictionary* json = [NSJSONSerialization
                           JSONObjectWithData:responseData
                           options:kNilOptions error:&error];
-    NSLog(@"%@",json);
-    
-    token = [json objectForKey:@"token"];
-    
-    if (token != nil) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        
-        [defaults setObject:token forKey:@"token"];
-        
-        [defaults synchronize];
+    if ([json objectForKey:@"created_at"] != nil) {
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"SuccessfulPosting"
+         object:self];
     }
     
-    else {
-        username = nil;
+    else{
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"FailedPosting"
+         object:self];
     }
     
 }
+
+- (void) createAReport{
+    
+    [self createAReportWithType:selectedString description:reportDescription latitude:lastLatitude longitude:lastLongitude image:image_url live_stream:nil];
+    
+}
+
 
 - (BOOL) authWithUsername:(NSString*)usernames andPassword:(NSString*)password{
     
@@ -109,10 +112,10 @@ static NSString *const kReport = @"/reports";
 }
 
 - (void) createAReportWithType:(NSString*)type description:(NSString*)description latitude:(NSString*)
-latitude longitude:(NSString*) longitude imageURL:(NSString*)image_url live_stream:(NSString*)liveStream{
+latitude longitude:(NSString*) longitude image:(NSString*)images_url live_stream:(NSString*)liveStream{
 
     NSError *error;
-    NSDictionary *report = [NSDictionary dictionaryWithObjectsAndKeys:type,@"type",description, @"description", latitude, @"latitude", longitude ,@"longitude", image_url, @"image_url", liveStream, @"live_stream", nil];
+    NSDictionary *report = [NSDictionary dictionaryWithObjectsAndKeys:type,@"report_type",description, @"description", latitude, @"latitude", longitude ,@"longitude", images_url, @"image_url", liveStream, @"live_stream", nil];
 
     NSDictionary* reportDictionary = [NSDictionary dictionaryWithObjectsAndKeys:token,@"auth_token",report, @"report",nil];
     
@@ -120,8 +123,11 @@ latitude longitude:(NSString*) longitude imageURL:(NSString*)image_url live_stre
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:reportDictionary
                                                        options:NSJSONWritingPrettyPrinted error:&error];
     
+    
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[kBaseAPI stringByAppendingString:kReport]]];
     [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
     request.postBody = [NSMutableData dataWithData:jsonData];
     [request setDelegate:self];
     [request startAsynchronous];
@@ -137,8 +143,8 @@ latitude longitude:(NSString*) longitude imageURL:(NSString*)image_url live_stre
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"token"] != nil) {
-        NSLog(@"%@",token);
         token = [defaults objectForKey:@"token"];
+        NSLog(@"%@",token);
     }
     
     return self;

@@ -47,7 +47,7 @@
 
 - (void) report{
     
-    [[ReporterBackendInteraction sharedManager]createAReportWithType:[[ReporterBackendInteraction sharedManager]selectedString] description:[[ReporterBackendInteraction sharedManager]reportDescription] latitude:[[ReporterBackendInteraction sharedManager]lastLatitude] longitude:[[ReporterBackendInteraction sharedManager]lastLatitude] imageURL:[[ReporterBackendInteraction sharedManager]pictureURL] live_stream:nil];
+    [[ReporterBackendInteraction sharedManager]createAReport];
     
 }
 

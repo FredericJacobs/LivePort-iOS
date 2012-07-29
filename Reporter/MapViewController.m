@@ -18,6 +18,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    map = [[UIWebView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    [self.view addSubview:map];
+    [map setDelegate:self];
+    
+    NSString *urlAddress = @"http://crowdreporter-johnmarkos.dotcloud.com/mobile.html";
+    
+    //Create a URL object.
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    
+    //URL Requst Object
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    
+    //Load the request in the UIWebView.
+    [map loadRequest:requestObj];
     
 }
 

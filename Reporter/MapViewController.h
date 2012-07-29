@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapViewController  : UIViewController{
-
+@interface MapViewController  : UIViewController <UIWebViewDelegate>{
+    UIWebView *map;
 }
+
+@property (nonatomic,retain) UIWebView *map;
 
 @end
