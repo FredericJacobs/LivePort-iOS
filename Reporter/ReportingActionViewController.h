@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <FPPicker/FPPicker.h>
 
-@interface SecondViewController : UIViewController <UIActionSheetDelegate, FPPickerDelegate >
+@interface ReportingActionViewController : UIViewController <UIActionSheetDelegate, FPPickerDelegate>
 
 @end

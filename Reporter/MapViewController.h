@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FPPicker/FPPicker.h>
 
-@interface FirstViewController  : UIViewController <FPPickerDelegate>{
+@interface MapViewController  : UIViewController <FPPickerDelegate>{
     IBOutlet UIButton *button;
 }
 

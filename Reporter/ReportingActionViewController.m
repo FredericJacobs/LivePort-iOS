@@ -6,16 +6,16 @@
 //  Copyright (c) 2012 Telecomix. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "ReportingActionViewController.h"
 #import "ReporterBackendInteraction.h"
 #import "ReportingNavigationViewController.h"
 #import "LivePortViewController.h"
 
-@interface SecondViewController ()
+@interface ReportingActionViewController ()
 
 @end
 
-@implementation SecondViewController 
+@implementation ReportingActionViewController 
 
 - (void)viewDidLoad
 {

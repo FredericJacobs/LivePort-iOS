@@ -22,10 +22,10 @@
 		B64BB59415C4840A00E81E3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB59315C4840A00E81E3B /* main.m */; };
 		B64BB59815C4840A00E81E3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB59715C4840A00E81E3B /* AppDelegate.m */; };
 		B64BB59B15C4840A00E81E3B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64BB59915C4840A00E81E3B /* MainStoryboard.storyboard */; };
-		B64BB59E15C4840A00E81E3B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB59D15C4840A00E81E3B /* FirstViewController.m */; };
+		B64BB59E15C4840A00E81E3B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB59D15C4840A00E81E3B /* MapViewController.m */; };
 		B64BB5A015C4840A00E81E3B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B64BB59F15C4840A00E81E3B /* first.png */; };
 		B64BB5A215C4840A00E81E3B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B64BB5A115C4840A00E81E3B /* first@2x.png */; };
-		B64BB5A515C4840A00E81E3B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB5A415C4840A00E81E3B /* SecondViewController.m */; };
+		B64BB5A515C4840A00E81E3B /* ReportingActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64BB5A415C4840A00E81E3B /* ReportingActionViewController.m */; };
 		B64BB5A715C4840A00E81E3B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B64BB5A615C4840A00E81E3B /* second.png */; };
 		B64BB5A915C4840A00E81E3B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B64BB5A815C4840A00E81E3B /* second@2x.png */; };
 		B64BB5B115C4840A00E81E3B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB5B015C4840A00E81E3B /* SenTestingKit.framework */; };
@@ -94,12 +94,12 @@
 		B64BB59615C4840A00E81E3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B64BB59715C4840A00E81E3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B64BB59A15C4840A00E81E3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		B64BB59C15C4840A00E81E3B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		B64BB59D15C4840A00E81E3B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		B64BB59C15C4840A00E81E3B /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B64BB59D15C4840A00E81E3B /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		B64BB59F15C4840A00E81E3B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		B64BB5A115C4840A00E81E3B /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		B64BB5A315C4840A00E81E3B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		B64BB5A415C4840A00E81E3B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		B64BB5A315C4840A00E81E3B /* ReportingActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportingActionViewController.h; sourceTree = "<group>"; };
+		B64BB5A415C4840A00E81E3B /* ReportingActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportingActionViewController.m; sourceTree = "<group>"; };
 		B64BB5A615C4840A00E81E3B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		B64BB5A815C4840A00E81E3B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		B64BB5AF15C4840A00E81E3B /* ReporterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReporterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +195,48 @@
 			name = Ressources;
 			sourceTree = "<group>";
 		};
+		B62321B215C4CACF008FC119 /* LivePort */ = {
+			isa = PBXGroup;
+			children = (
+				B623218D15C4BBA9008FC119 /* LivePortViewController.h */,
+				B623218E15C4BBA9008FC119 /* LivePortViewController.m */,
+				B623219215C4C8EF008FC119 /* LivePortInfosView.h */,
+				B623219315C4C8EF008FC119 /* LivePortInfosView.m */,
+			);
+			name = LivePort;
+			sourceTree = "<group>";
+		};
+		B62321B315C4CAE1008FC119 /* Back-end Syncing */ = {
+			isa = PBXGroup;
+			children = (
+				B623218515C4B8B1008FC119 /* ReporterBackendInteraction.h */,
+				B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */,
+			);
+			name = "Back-end Syncing";
+			sourceTree = "<group>";
+		};
+		B62321B415C4CAEC008FC119 /* Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				B62321B215C4CACF008FC119 /* LivePort */,
+				B6FBB02015C4A7D70019C32E /* ReportingNavigationViewController.h */,
+				B6FBB02115C4A7D70019C32E /* ReportingNavigationViewController.m */,
+				B6FBB02815C4AA300019C32E /* ReportViewController.xib */,
+				B6FBB02315C4A7F40019C32E /* ReportViewController.h */,
+				B6FBB02415C4A7F40019C32E /* ReportViewController.m */,
+			);
+			name = Reporting;
+			sourceTree = "<group>";
+		};
+		B62321B515C4CB34008FC119 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				B64BB59C15C4840A00E81E3B /* MapViewController.h */,
+				B64BB59D15C4840A00E81E3B /* MapViewController.m */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
 		B64BB57815C4840A00E81E3B = {
 			isa = PBXGroup;
 			children = (
@@ -253,29 +295,19 @@
 		B64BB58D15C4840A00E81E3B /* Reporter */ = {
 			isa = PBXGroup;
 			children = (
-				B623219515C4C926008FC119 /* Ressources */,
-				B623218D15C4BBA9008FC119 /* LivePortViewController.h */,
-				B623218E15C4BBA9008FC119 /* LivePortViewController.m */,
-				B623219215C4C8EF008FC119 /* LivePortInfosView.h */,
-				B623219315C4C8EF008FC119 /* LivePortInfosView.m */,
-				B623218515C4B8B1008FC119 /* ReporterBackendInteraction.h */,
-				B623218615C4B8B1008FC119 /* ReporterBackendInteraction.m */,
+				B62321B515C4CB34008FC119 /* MapView */,
+				B62321B315C4CAE1008FC119 /* Back-end Syncing */,
+				B62321B415C4CAEC008FC119 /* Reporting */,
 				B64BB59615C4840A00E81E3B /* AppDelegate.h */,
 				B64BB59715C4840A00E81E3B /* AppDelegate.m */,
 				B64BB59915C4840A00E81E3B /* MainStoryboard.storyboard */,
-				B64BB59C15C4840A00E81E3B /* FirstViewController.h */,
-				B64BB59D15C4840A00E81E3B /* FirstViewController.m */,
-				B6FBB02015C4A7D70019C32E /* ReportingNavigationViewController.h */,
-				B6FBB02115C4A7D70019C32E /* ReportingNavigationViewController.m */,
-				B6FBB02815C4AA300019C32E /* ReportViewController.xib */,
-				B6FBB02315C4A7F40019C32E /* ReportViewController.h */,
-				B6FBB02415C4A7F40019C32E /* ReportViewController.m */,
 				B64BB59F15C4840A00E81E3B /* first.png */,
 				B64BB5A115C4840A00E81E3B /* first@2x.png */,
-				B64BB5A315C4840A00E81E3B /* SecondViewController.h */,
-				B64BB5A415C4840A00E81E3B /* SecondViewController.m */,
+				B64BB5A315C4840A00E81E3B /* ReportingActionViewController.h */,
+				B64BB5A415C4840A00E81E3B /* ReportingActionViewController.m */,
 				B64BB5A615C4840A00E81E3B /* second.png */,
 				B64BB5A815C4840A00E81E3B /* second@2x.png */,
+				B623219515C4C926008FC119 /* Ressources */,
 				B64BB58E15C4840A00E81E3B /* Supporting Files */,
 			);
 			path = Reporter;
@@ -411,8 +443,8 @@
 			files = (
 				B64BB59415C4840A00E81E3B /* main.m in Sources */,
 				B64BB59815C4840A00E81E3B /* AppDelegate.m in Sources */,
-				B64BB59E15C4840A00E81E3B /* FirstViewController.m in Sources */,
-				B64BB5A515C4840A00E81E3B /* SecondViewController.m in Sources */,
+				B64BB59E15C4840A00E81E3B /* MapViewController.m in Sources */,
+				B64BB5A515C4840A00E81E3B /* ReportingActionViewController.m in Sources */,
 				B6FBB02215C4A7D70019C32E /* ReportingNavigationViewController.m in Sources */,
 				B6FBB02615C4A7F40019C32E /* ReportViewController.m in Sources */,
 				B623218715C4B8B1008FC119 /* ReporterBackendInteraction.m in Sources */,
