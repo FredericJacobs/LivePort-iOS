@@ -39,7 +39,7 @@
 }
 
 - (void) dismissMVC {
-    [self ]
+    [[self presentingViewController] dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

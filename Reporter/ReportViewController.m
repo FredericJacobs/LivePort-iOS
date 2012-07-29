@@ -35,18 +35,37 @@
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 1;
+    return 2;
 
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+    return 3;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReportTableViewCell"];
+    if (cell == nil) {
+        // No cell to reuse => create a new one
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReportTableViewCell"];
+        
+        // Initialize cell
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.textLabel.textColor = [UIColor blueColor];
+        // TODO: Any other initialization that applies to all cells of this type.
+        //       (Possibly create and add subviews, assign tags, etc.)
+    }
+    
+    cell.textLabel.text = @"Placeholder";
+    
+    return cell;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-
+    
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated{
