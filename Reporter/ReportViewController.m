@@ -55,6 +55,7 @@
     accurateLocation = TRUE;
     
     decLoc = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
+    [[ReporterBackendInteraction sharedManager] setLastLatitude:decLoc];
     int degrees = newLocation.coordinate.latitude;
     double decimal = fabs(newLocation.coordinate.latitude - degrees);
     int minutes = decimal * 60;
@@ -65,6 +66,8 @@
     decimal = fabs(newLocation.coordinate.longitude - degrees);
     minutes = decimal * 60;
     seconds = decimal * 3600 - minutes * 60;
+    
+    [[ReporterBackendInteraction sharedManager] setLastLatitude:[NSString stringWithFormat:@"%f",newLocation.coordinate.longitude ]];
     
     decLoc = [[NSString stringWithString:decLoc] stringByAppendingString:[NSString stringWithFormat:@",%f",newLocation.coordinate.longitude ]];
     

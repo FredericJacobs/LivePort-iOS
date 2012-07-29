@@ -16,15 +16,21 @@
     NSString *username;
     NSString *pictureURL;
     NSArray *categories;
+    NSString *lastLatitude;
+    NSString *lastLongitude;
+    NSString *reportDescription;
 }
 
 @property (nonatomic,retain) NSString *selectedString;
 @property (nonatomic,retain) NSString *pictureURL;
 @property (nonatomic,readonly) NSString *username;
 @property (nonatomic,readonly) NSArray *categories;
+@property (nonatomic,retain) NSString *reportDescription;
+@property (readwrite) NSString *lastLatitude;
+@property (readwrite) NSString *lastLongitude;
 
 + (id)sharedManager;
-- (void) authWithUsername:(NSString*)usernames andPassword:(NSString*)password;
+- (BOOL) authWithUsername:(NSString*)usernames andPassword:(NSString*)password;
 - (BOOL) userIsLoggedIn;
 - (void) createAReportWithType:(NSString*)type description:(NSString*)description latitude:(NSString*)latitude longitude:(NSString*) longitude imageURL:(NSString*)image_url live_stream:(NSString*)liveStream;
 

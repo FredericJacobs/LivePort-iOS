@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "LivePortLoginView.h"
 
-@interface LivePortTabBarViewController : UITabBarController{
+@interface LivePortTabBarViewController : UITabBarController<UITextFieldDelegate>{
     UIImageView *defaultView;
     LivePortLoginView *loginView;
     

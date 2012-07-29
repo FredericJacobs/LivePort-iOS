@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LivePortLoginView : UIView <UITextFieldDelegate>{
+@interface LivePortLoginView : UIView {
     UITextField *usernameField;
     UITextField *mPasswordField;
 }
+
+@property (nonatomic,retain) UITextField *usernameField;
+@property (nonatomic,retain) UITextField *mPasswordField;
+
 
 @end

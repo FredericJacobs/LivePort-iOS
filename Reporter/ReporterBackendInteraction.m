@@ -13,7 +13,7 @@ static NSString *const kTokenURL = @"/api/v1/tokens.json";
 static NSString *const kReport = @"/reports";
 
 @implementation ReporterBackendInteraction
-@synthesize selectedString, categories;
+@synthesize selectedString, categories,reportDescription, lastLatitude, lastLongitude;
 
 
 + (id)sharedManager {
@@ -70,13 +70,42 @@ static NSString *const kReport = @"/reports";
     
 }
 
-- (void) authWithUsername:(NSString*)usernames andPassword:(NSString*)password{
+- (BOOL) authWithUsername:(NSString*)usernames andPassword:(NSString*)password{
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[kBaseAPI stringByAppendingString:kTokenURL]]];
     [request setPostValue:usernames forKey:@"username"];
     [request setPostValue:password forKey:@"password"];
     [request setDelegate:self];
-    [request startAsynchronous];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *responseData = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:responseData
+                              options:kNilOptions error:&error];
+        
+        token = [json objectForKey:@"token"];
+        
+        if (token != nil) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            
+            [defaults setObject:token forKey:@"token"];
+            [defaults setObject:usernames forKey:@"username"];
+            [defaults synchronize];
+            return true;
+        }
+        
+        else {
+            username = nil;
+            token = nil;
+            return false;
+        }
+        
+        
+    }
+    
+    return false;
+    
 }
 
 - (void) createAReportWithType:(NSString*)type description:(NSString*)description latitude:(NSString*)
