@@ -1,0 +1,15 @@
+[submodule "filepicker_io"]
+	path = filepicker_io
+	url = git://github.com/Filepicker/ios.git
+[submodule "ASI_HTTP_REQUEST"]
+	path = ASI_HTTP_REQUEST
+	url = git://github.com/pokeb/asi-http-request.git
+[submodule "Reachability"]
+	path = Reachability
+	url = git://github.com/tonymillion/Reachability.git
+[submodule "SDWebImage_ImageCaching_Async"]
+	path = SDWebImage_ImageCaching_Async
+	url = git://github.com/rs/SDWebImage.git
+[submodule "opentok-ios-sdk"]
+	path = opentok-ios-sdk
+	url = git://github.com/opentok/opentok-ios-sdk.git
