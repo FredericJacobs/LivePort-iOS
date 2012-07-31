@@ -16,16 +16,16 @@
 @synthesize pickerView,details,segmented;
 static double widgetHeight = 240;
 static double widgetWidth = 320;
+
+// Don't forget to change the API key and token.
+// Ideally your back-end should generate a new session key for each new event that is reported. We didn't had time to fully implemented so this was removed in this release.
+// You can get yourself these keys here : http://staging.tokbox.com/hl/session/create
+
 static NSString* const kApiKey = @"1127";
 static NSString* const kToken = @"devtoken";
 static NSString* const kSessionId = @"1sdemo00855f8290f8efa648d9347d718f7e06fd";
 
 static bool subscribeToSelf = NO;
-
-// To test the session in a web page,
-// go to http://staging.tokbox.com/opentok/api/tools/js/tutorials/helloworld.html
-// For a unique API key, go to http://staging.tokbox.com/hl/session/create
-
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
     
@@ -209,6 +209,8 @@ static bool subscribeToSelf = NO;
     [self showAlert:[NSString stringWithFormat:@"There was an error connecting to session %@", session.sessionId]];
 }
 
+// Switch for videochatting when 2 iphones or more are connected
+// Useful feature to check if your hair is like you want it to be.
 
 -(IBAction) segmentedControlIndexChanged{
 	switch (self.segmented.selectedSegmentIndex) {

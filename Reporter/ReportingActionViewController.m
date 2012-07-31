@@ -15,7 +15,7 @@
 
 @end
 
-@implementation ReportingActionViewController 
+@implementation ReportingActionViewController
 
 - (void)viewDidLoad
 {
@@ -41,7 +41,7 @@
                      completion:^(BOOL finished){
                          [self goBackToTheMapView];
                          [reporting removeFromParentViewController];
-                }];
+                     }];
     
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle: @"Thanks for reporting !"
@@ -49,10 +49,8 @@
                           delegate: nil
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
-    
+
     [alert show];
-    
-    
 }
 
 - (void) failedPosting:(NSNotification *) notification
@@ -75,9 +73,6 @@
                           otherButtonTitles:nil];
     
     [alert show];
-
-    
-        
 }
 
 
@@ -85,11 +80,13 @@
 - (void) viewDidAppear:(BOOL)animated{
     
     [self showActionSheet:nil];
+    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    
 }
 
 
@@ -109,7 +106,7 @@
 		
 	} else if (buttonIndex == 1) {
         FPPickerController *fpController = [[FPPickerController alloc] init];
-    
+        
         
         fpController.fpdelegate = self;
         
@@ -139,13 +136,13 @@
 
 - (void) FPPickerController:(FPPickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [[ReporterBackendInteraction sharedManager] setImage_url:[info objectForKey:@"FPPickerControllerRemoteURL"]];
-
+    
     NSLog(@"%@",[[ReporterBackendInteraction sharedManager] image_url]);
     
     [self dismissViewControllerAnimated:YES completion:^(void){
         reporting = [[ReportingNavigationViewController alloc]init] ;
         
-    [self presentViewController:reporting animated:YES completion:nil];
+        [self presentViewController:reporting animated:YES completion:nil];
     }];;
 }
 

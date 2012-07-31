@@ -259,16 +259,6 @@ return cell;
         [[self navigationController] pushViewController:[[ReportWhatViewController alloc]initWithStyle:UITableViewStyleGrouped] animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
-    
-    if (indexPath.section == 1) {
-        if (indexPath.row == 2) {
-            UIApplication *app = [UIApplication sharedApplication];
-            NSString *coordinates = [NSString stringWithFormat:@"%@,%@",latitude,longitude];
-            NSLog(@"%@",coordinates);
-            [app openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@",decLoc]]];
-        }
-    }
-    
 }
 
 - (void) viewWillAppear:(BOOL)animated{

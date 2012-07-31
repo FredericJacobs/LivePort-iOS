@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
@@ -73,6 +72,12 @@
                     <view key="view" contentMode="scaleToFill" id="cCA-Jr-jQF">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="more.png" id="1I3-7S-NBK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="3JU-b1-tUM"/>
@@ -85,6 +90,7 @@
         <image name="Toolbarreport.png" width="20" height="20"/>
         <image name="banner.png" width="320" height="40"/>
         <image name="linen.png" width="320" height="480"/>
+        <image name="more.png" width="320" height="480"/>
         <image name="plus-button.png" width="42" height="40"/>
         <image name="tabmap.png" width="20" height="20"/>
     </resources>
@@ -100,9 +106,6 @@
         </class>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="map" candidateClass="UIWebView"/>
-            </relationships>
         </class>
         <class className="ReportingActionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportingActionViewController.h"/>

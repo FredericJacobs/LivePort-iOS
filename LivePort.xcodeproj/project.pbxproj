@@ -30,6 +30,8 @@
 		B64BB5E015C4966700E81E3B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB5DF15C4966700E81E3B /* QuartzCore.framework */; };
 		B64BB5E215C4966E00E81E3B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB5E115C4966E00E81E3B /* CoreFoundation.framework */; };
 		B64BB5E415C4967300E81E3B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64BB5E315C4967300E81E3B /* MobileCoreServices.framework */; };
+		B654EFA415C8A5710067912E /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = B654EFA215C8A5710067912E /* more.png */; };
+		B654EFA515C8A5710067912E /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B654EFA315C8A5710067912E /* more@2x.png */; };
 		B668911715C56019008589A1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B668911615C56019008589A1 /* ImageIO.framework */; };
 		B6989CF215C5959F00984639 /* LivePortLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6989CF115C5959F00984639 /* LivePortLoginView.m */; };
 		B6CB34CB15C7C5530088BFDE /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CB34B715C7C5530088BFDE /* banner.png */; };
@@ -156,6 +158,8 @@
 		B64BB5DF15C4966700E81E3B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B64BB5E115C4966E00E81E3B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		B64BB5E315C4967300E81E3B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B654EFA215C8A5710067912E /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = more.png; path = Ressources/more.png; sourceTree = "<group>"; };
+		B654EFA315C8A5710067912E /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "more@2x.png"; path = "Ressources/more@2x.png"; sourceTree = "<group>"; };
 		B668911615C56019008589A1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B6989CF015C5959F00984639 /* LivePortLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePortLoginView.h; sourceTree = "<group>"; };
 		B6989CF115C5959F00984639 /* LivePortLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePortLoginView.m; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 				B6CB34BA15C7C5530088BFDE /* cars_iphone@2x.png */,
 				B6CB34BB15C7C5530088BFDE /* Default.png */,
 				B6CB34BC15C7C5530088BFDE /* Default@2x.png */,
+				B654EFA215C8A5710067912E /* more.png */,
+				B654EFA315C8A5710067912E /* more@2x.png */,
 				B6CB34BD15C7C5530088BFDE /* icon.png */,
 				B6CB34BE15C7C5530088BFDE /* icon@2x.png */,
 				B6CB34BF15C7C5530088BFDE /* linen.png */,
@@ -657,6 +663,8 @@
 				B6CB34DE15C7C5530088BFDE /* Toolbarreport@2x.png in Resources */,
 				B6CB353615C7D1060088BFDE /* opentok.bundle in Resources */,
 				B6CB353915C7D1850088BFDE /* FPPicker.bundle in Resources */,
+				B654EFA415C8A5710067912E /* more.png in Resources */,
+				B654EFA515C8A5710067912E /* more@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@
 
 
 // This is the staging server for #Hack4Change -- Feel free to use your own
+// Code available at https://github.com/TelecomixSyria/Reporter
+
 static NSString *const kBaseAPI = @"http://crowdreporter-johnmarkos.dotcloud.com";
 static NSString *const kTokenURL = @"/api/v1/tokens.json";
 static NSString *const kReport = @"/reports";
@@ -28,9 +30,9 @@ static NSString *const kReport = @"/reports";
 }
 
 - (void) updateCategories {
-
-// Broken 
-
+    
+    // Broken
+    
 }
 
 - (BOOL) userIsLoggedIn{
@@ -54,6 +56,7 @@ static NSString *const kReport = @"/reports";
     NSDictionary* json = [NSJSONSerialization
                           JSONObjectWithData:responseData
                           options:kNilOptions error:&error];
+    
     if ([json objectForKey:@"created_at"] != nil) {
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"SuccessfulPosting"
@@ -115,10 +118,10 @@ static NSString *const kReport = @"/reports";
 
 - (void) createAReportWithType:(NSString*)type description:(NSString*)description latitude:(NSString*)
 latitude longitude:(NSString*) longitude image:(NSString*)images_url live_stream:(NSString*)liveStream{
-
+    
     NSError *error;
     NSDictionary *report = [NSDictionary dictionaryWithObjectsAndKeys:type,@"report_type",description, @"description", latitude, @"latitude", longitude ,@"longitude", images_url, @"image_url", liveStream, @"live_stream", nil];
-
+    
     NSDictionary* reportDictionary = [NSDictionary dictionaryWithObjectsAndKeys:token,@"auth_token",report, @"report",nil];
     
     //convert object to data
