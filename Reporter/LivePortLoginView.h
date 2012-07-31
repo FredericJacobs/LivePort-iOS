@@ -3,7 +3,7 @@
 //  LivePort
 //
 //  Created by Frederic Jacobs on 29/7/12.
-//  Copyright (c) 2012 Telecomix. All rights reserved.
+//  GPLv3 Release GNU GENERAL PUBLIC LICENSE aka Copyleft - http://www.gnu.org/copyleft/gpl.html
 //
 
 #import <UIKit/UIKit.h>

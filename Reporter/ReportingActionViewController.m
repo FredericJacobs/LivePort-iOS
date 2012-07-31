@@ -3,7 +3,7 @@
 //  Reporter
 //
 //  Created by Frederic Jacobs on 28/7/12.
-//  Copyright (c) 2012 Telecomix. All rights reserved.
+//  GPLv3 Release GNU GENERAL PUBLIC LICENSE aka Copyleft - http://www.gnu.org/copyleft/gpl.html
 //
 
 #import "ReportingActionViewController.h"
@@ -109,8 +109,7 @@
 		
 	} else if (buttonIndex == 1) {
         FPPickerController *fpController = [[FPPickerController alloc] init];
-        
-        fpController.sourceNames = [[NSArray alloc] initWithObjects: FPSourceCamera, FPSourceCameraRoll, nil];
+    
         
         fpController.fpdelegate = self;
         
@@ -141,6 +140,8 @@
 - (void) FPPickerController:(FPPickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [[ReporterBackendInteraction sharedManager] setImage_url:[info objectForKey:@"FPPickerControllerRemoteURL"]];
 
+    NSLog(@"%@",[[ReporterBackendInteraction sharedManager] image_url]);
+    
     [self dismissViewControllerAnimated:YES completion:^(void){
         reporting = [[ReportingNavigationViewController alloc]init] ;
         

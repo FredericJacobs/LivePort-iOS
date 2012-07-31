@@ -3,11 +3,13 @@
 //  Reporter
 //
 //  Created by Frederic Jacobs on 28/7/12.
-//  Copyright (c) 2012 Telecomix. All rights reserved.
+//  GPLv3 Release GNU GENERAL PUBLIC LICENSE aka Copyleft - http://www.gnu.org/copyleft/gpl.html
 //
 
 #import "ReporterBackendInteraction.h"
 
+
+// This is the staging server for #Hack4Change -- Feel free to use your own
 static NSString *const kBaseAPI = @"http://crowdreporter-johnmarkos.dotcloud.com";
 static NSString *const kTokenURL = @"/api/v1/tokens.json";
 static NSString *const kReport = @"/reports";
@@ -27,7 +29,7 @@ static NSString *const kReport = @"/reports";
 
 - (void) updateCategories {
 
-// TO DO
+// Broken 
 
 }
 
@@ -138,6 +140,8 @@ latitude longitude:(NSString*) longitude image:(NSString*)images_url live_stream
     if (self = [super init]) {
         
     }
+    
+    // Sorry for hardcoding categories, API endpoint broke before demo
     
     categories = @[@"Road Block", @"Checkpoint", @"Police Sighting", @"Fire", @"Earthquake", @"Other" ];
     
