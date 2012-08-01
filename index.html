@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>LivePort for iOS by TelecomixSyria</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/TelecomixSyria/LivePort-iOS-Native-App">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/TelecomixSyria/LivePort-iOS-Native-App/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/TelecomixSyria/LivePort-iOS-Native-App/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>LivePort for iOS</h1>
+          <p>Report, Anything !</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/TelecomixSyria">TelecomixSyria</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <p><img src="http://f.cl.ly/items/090N2a3129390G0U0o1t/iPhone4STemplate@2x.png" alt="Live Port for iOS"></p>
+
+<h2>Goal</h2>
+
+<p>We built a tool able to report text, pictures or a video live-stream directly from your phone. The use cases are endless. Earthquakes, Fires, Vandalism, Shootings … People can report anything, anywhere, anytime. </p>
+
+<p>The system would be crowdsourced and we rely on the community to confirm or deny certain events. </p>
+
+<p>We also have a subscription-based model where people could subscribe to events close to their location (on iPhones and fixed zone if you want SMS notifications) and be notified when something happens. </p>
+
+<h2>The iPhone App</h2>
+
+<p>The iPhone app is open-source and even better than that, it's free software. So feel free to play with it and hack your own stuff based on this app. We really on two external Frameworks for dealing with media. LiveStreaming is provided by the awesome <a href="http://www.tokbox.com/opentok/api/documentation">OpenTok</a> and <a href="https://developers.filepicker.io/docs/ios/">FilePicker.io</a> handles the picture upload. Let me give you a few guidelines to set up the app correctly.</p>
+
+<p>The app is only certified to work under 5.x iOS SDKs. FilePicker.io is reportedly causing the app to crash on iOS 6 beta with the current release. </p>
+
+<p>Don't forget to :</p>
+
+<ul>
+<li>auto create the schemes when opening the project in Xcode.</li>
+<li>Fill the FilePicker API Key in the Info.plist file.</li>
+<li>Test the App on an iPhone because the OpenTok SDK was only built for ARMv6/7 architecture.</li>
+</ul><h2>Screenshots</h2>
+
+<p>If you're not subscriber of the iOS Developer Program you can't run the app. If you want to see what it looks like <a href="http://cl.ly/ISH1">here is a collection of screen captures</a></p>
+
+<h2>Credits</h2>
+
+<p>This app is the accomplishment of a team effort by <a href="http://twitter.com/binxed">Bingxin Nancy Chen</a>, <a href="http://twitter.com/FredericJacobs">Frederic Jacobs</a>, <a href="http://twitter.com/johnmarkos">John Markos O'Neill</a>, <a href="https://www.facebook.com/choi.sung">Choi Sung</a>, <a href="https://twitter.com/lightgap">Joaquin Mendoza</a>, <a href="https://www.facebook.com/lane.debellis">Lane DeBellis</a>, <a href="https://www.facebook.com/NRFACTOR">Nicholas Rebhun</a> and <a href="https://www.facebook.com/gabby.miseroy">Gabby Miseroy</a> </p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
