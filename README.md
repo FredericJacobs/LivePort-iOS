@@ -1,6 +1,8 @@
 Live Port iPhone App - Change.org Hackathon Project
 ========
 
+![Live Port for iOS](http://f.cl.ly/items/090N2a3129390G0U0o1t/iPhone4STemplate@2x.png)
+
 ## Goal 
 
 We built a tool able to report text, pictures or a video live-stream directly from your phone. The use cases are endless. Earthquakes, Fires, Vandalism, Shootings … People can report anything, anywhere, anytime. 
@@ -20,6 +22,10 @@ Don't forget to :
 - auto create the schemes when opening the project in Xcode.
 - Fill the FilePicker API Key in the Info.plist file.
 - Test the App on an iPhone because the OpenTok SDK was only built for ARMv6/7 architecture.
+
+## Screenshots
+
+If you're not subscriber of the iOS Developer Program you can't run the app. If you want to see what it looks like [here is a collection of screen captures](http://cl.ly/ISH1)
 
 ## Credits
 
